@@ -1,0 +1,6 @@
+pip
+numpy
+matplotlib
+networkx
+netwulf
+plotly
