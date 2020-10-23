@@ -4,6 +4,5 @@ matplotlib
 networkx
 netwulf
 plotly
-beautifulsoup4
 itertools
 nltk
