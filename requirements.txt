@@ -4,6 +4,5 @@ matplotlib
 networkx
 netwulf
 plotly
-itertools
 nltk
 requests
