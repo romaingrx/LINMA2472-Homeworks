@@ -6,3 +6,4 @@ netwulf
 plotly
 itertools
 nltk
+requests
