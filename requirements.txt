@@ -4,5 +4,5 @@ matplotlib
 networkx
 netwulf
 plotly
-nltk
+spacy
 requests
