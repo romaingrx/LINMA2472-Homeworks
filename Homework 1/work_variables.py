@@ -65,14 +65,3 @@ name_to_replace = {
 
 }
 
-# ---
-# K-Core decomposition
-
-class Point:
-    def __init__(self, name, neighbors, pruned = False):
-        self.name = name
-        self.neighbors = neighbors
-        self.degree = len(neighbors)
-        self.pruned = pruned
-
-
