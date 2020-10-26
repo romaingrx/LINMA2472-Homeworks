@@ -1,6 +1,7 @@
 pip
 numpy
 matplotlib
+jupyter
 networkx
 netwulf
 plotly
