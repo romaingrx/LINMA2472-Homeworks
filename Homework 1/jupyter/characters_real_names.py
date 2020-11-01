@@ -7,8 +7,7 @@ patterns = [
     {"label": "PERSON", "pattern": "Aunt Petunia"},
     {"label": "PERSON", "pattern": "Vernon"},
     {"label": "PERSON", "pattern": "Dudley's"},
-    {"label": "PERSON", "pattern": "Auntie Marge's"},
-	{"label": "WRONG", "pattern": "Harry Potter"}
+    {"label": "PERSON", "pattern": "Auntie Marge's"}
 ]
 
 # ---
@@ -27,6 +26,7 @@ persons_real_names = [
 	"Sturgis Podmore",
 	"Poppy Pomfrey",
 	"James Potter",
+	"Harry Potter",
 	"Lily Potter",
 	"Quirinus Quirrell",
 	"Millicent Bulstrode",
