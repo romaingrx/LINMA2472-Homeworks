@@ -6,6 +6,7 @@
 @last modified : 2020 Oct 31, 19:07:19
 """
 
+import random
 import numpy as np
 import networkx as nx
 
@@ -65,6 +66,7 @@ def generate_active_edges(graph:nx.Graph, p:float) -> nx.Graph:
     g = graph.copy()
 
     edges = list(g.edges)
+    edges_weight = np.array([graph[u][v].get('weight', 1) for u, v in graph.edges])
 
     # As the instruction does not specify what percentage of activated edges we have to take, we have chosen to use multinomial experiments.
     # But we left the possibility to enforce a certain percentage of activated edges as well.
