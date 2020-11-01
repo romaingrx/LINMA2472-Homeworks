@@ -132,3 +132,15 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .vscode/settings.json
+
+miscellaneous/plot/cascade-model-by-probability.pdf
+miscellaneous/plot/clustering-coef-weight.pdf
+miscellaneous/plot/clustering-coef.pdf
+miscellaneous/plot/degree-distribution.pdf
+miscellaneous/plot/graph-10-most-shell.pdf
+miscellaneous/plot/louvain-shell-10.pdf
+miscellaneous/plot/louvain-spring-10-1.pdf
+miscellaneous/plot/louvain-spring-10-2.pdf
+miscellaneous/plot/louvain-spring-people-s2.pdf
+miscellaneous/plot/louvain-spring-people-s6.pdf
+miscellaneous/plot/louvain-spring-people-s14.pdf
