@@ -84,7 +84,7 @@ def generate_active_edges(graph:nx.Graph, p:float) -> nx.Graph:
     return g
 
 
-def get_accessible_neighbors(g:nx.Graph, node:nx.Node) -> list:
+def get_accessible_neighbors(g:nx.Graph, node) -> list:
     """
     :param g: the graph
     :param node: the root node
