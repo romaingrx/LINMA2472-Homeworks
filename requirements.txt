@@ -8,3 +8,4 @@ plotly
 spacy
 requests
 python-louvain
+pandas
