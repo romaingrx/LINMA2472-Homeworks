@@ -118,6 +118,9 @@ linma2472/
 # Pycharm files
 .idea
 
+# VSCode files
+.vscode
+
 # Rope project settings
 .ropeproject
 
