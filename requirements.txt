@@ -9,3 +9,6 @@ spacy
 requests
 python-louvain
 pandas
+nltk
+pandarallel
+gensim

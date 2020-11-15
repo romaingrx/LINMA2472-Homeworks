@@ -118,6 +118,9 @@ linma2472/
 # Pycharm files
 .idea
 
+# VSCode files
+.vscode
+
 # Rope project settings
 .ropeproject
 
@@ -133,3 +136,4 @@ dmypy.json
 .pyre/
 .vscode/settings.json
 Homework 2/extra tutorial - Word2Vec.ipynb
+lightning_logs
