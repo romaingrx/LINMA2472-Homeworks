@@ -137,3 +137,7 @@ dmypy.json
 .vscode/settings.json
 Homework 2/extra tutorial - Word2Vec.ipynb
 lightning_logs
+Homework 2/models-gpu
+Homework 2/conda.py
+Homework 2/plot*
+Homework 2/pour_plot.ipynb
