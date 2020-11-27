@@ -1,0 +1,1001 @@
+education,gender,number_vehicles,accommodation,employment,children,commute_time,disease,disease
+Bachelor,female,0,Own,Employed,True,0,heart disease,1
+Bachelor,female,0,Own,Employed,True,0,hypertension,1
+Bachelor,female,0,Own,Employed,True,0,skin cancer,1
+Bachelor,female,0,Own,Employed,True,1,HIV/AIDS,1
+Bachelor,female,0,Own,Employed,True,1,gastritis,1
+Bachelor,female,0,Own,Employed,True,1+,HIV/AIDS,1
+Bachelor,female,0,Own,Employed,True,1+,diabetes,1
+Bachelor,female,0,Own,Employed,True,1+,heart disease,1
+Bachelor,female,0,Own,Employed,True,1+,hypertension,1
+Bachelor,female,0,Own,Retired,True,0,HIV/AIDS,1
+Bachelor,female,0,Own,Retired,True,0,breast cancer,1
+Bachelor,female,0,Own,Retired,True,0,diabetes,1
+Bachelor,female,0,Own,Retired,True,0,gastritis,1
+Bachelor,female,0,Own,Retired,True,0,heart disease,1
+Bachelor,female,0,Own,Retired,True,0,hypertension,1
+Bachelor,female,0,Own,Retired,True,0,kidney disease,1
+Bachelor,female,0,Own,Retired,True,0,multiple sclerosis,1
+Bachelor,female,0,Own,Retired,True,0,schizophrenia,1
+Bachelor,female,0,Own,Retired,True,0,skin cancer,1
+Bachelor,female,0,Own,Student,True,1+,gastritis,1
+Bachelor,female,0,Own,Student,True,1+,kidney disease,1
+Bachelor,female,0,Own,Unemployed,True,0,HIV/AIDS,2
+Bachelor,female,0,Own,Unemployed,True,0,endometriosis,1
+Bachelor,female,0,Own,Unemployed,True,0,gastritis,1
+Bachelor,female,0,Own,Unemployed,True,0,heart disease,1
+Bachelor,female,0,Own,Unemployed,True,0,skin cancer,1
+Bachelor,female,0,Rent,Employed,True,0,HIV/AIDS,2
+Bachelor,female,0,Rent,Employed,True,0,diabetes,1
+Bachelor,female,0,Rent,Employed,True,0,gastritis,2
+Bachelor,female,0,Rent,Employed,True,0,hypertension,1
+Bachelor,female,0,Rent,Employed,True,1,Alzheimer's disease,1
+Bachelor,female,0,Rent,Employed,True,1,HIV/AIDS,3
+Bachelor,female,0,Rent,Employed,True,1,gastritis,1
+Bachelor,female,0,Rent,Employed,True,1,heart disease,2
+Bachelor,female,0,Rent,Employed,True,1,hypertension,1
+Bachelor,female,0,Rent,Employed,True,1,multiple sclerosis,1
+Bachelor,female,0,Rent,Employed,True,1,schizophrenia,4
+Bachelor,female,0,Rent,Employed,True,1,skin cancer,3
+Bachelor,female,0,Rent,Employed,True,1+,Alzheimer's disease,3
+Bachelor,female,0,Rent,Employed,True,1+,HIV/AIDS,1
+Bachelor,female,0,Rent,Employed,True,1+,breast cancer,1
+Bachelor,female,0,Rent,Employed,True,1+,diabetes,1
+Bachelor,female,0,Rent,Employed,True,1+,heart disease,2
+Bachelor,female,0,Rent,Employed,True,1+,multiple sclerosis,1
+Bachelor,female,0,Rent,Employed,True,1+,schizophrenia,3
+Bachelor,female,0,Rent,Employed,True,1+,skin cancer,2
+Bachelor,female,0,Rent,Retired,False,0,multiple sclerosis,1
+Bachelor,female,0,Rent,Retired,False,0,skin cancer,1
+Bachelor,female,0,Rent,Retired,True,0,Alzheimer's disease,8
+Bachelor,female,0,Rent,Retired,True,0,HIV/AIDS,3
+Bachelor,female,0,Rent,Retired,True,0,breast cancer,3
+Bachelor,female,0,Rent,Retired,True,0,diabetes,6
+Bachelor,female,0,Rent,Retired,True,0,endometriosis,7
+Bachelor,female,0,Rent,Retired,True,0,gastritis,1
+Bachelor,female,0,Rent,Retired,True,0,heart disease,3
+Bachelor,female,0,Rent,Retired,True,0,hypertension,4
+Bachelor,female,0,Rent,Retired,True,0,kidney disease,2
+Bachelor,female,0,Rent,Retired,True,0,multiple sclerosis,3
+Bachelor,female,0,Rent,Retired,True,0,schizophrenia,1
+Bachelor,female,0,Rent,Retired,True,0,skin cancer,2
+Bachelor,female,0,Rent,Student,True,1,breast cancer,2
+Bachelor,female,0,Rent,Student,True,1,diabetes,1
+Bachelor,female,0,Rent,Unemployed,False,0,Alzheimer's disease,1
+Bachelor,female,0,Rent,Unemployed,False,0,kidney disease,1
+Bachelor,female,0,Rent,Unemployed,True,0,diabetes,2
+Bachelor,female,0,Rent,Unemployed,True,0,heart disease,1
+Bachelor,female,0,Rent,Unemployed,True,0,hypertension,2
+Bachelor,female,0,Rent,Unemployed,True,0,multiple sclerosis,1
+Bachelor,female,1,Own,Employed,False,1,diabetes,1
+Bachelor,female,1,Own,Employed,False,1,hypertension,2
+Bachelor,female,1,Own,Employed,True,0,kidney disease,2
+Bachelor,female,1,Own,Employed,True,0,multiple sclerosis,1
+Bachelor,female,1,Own,Employed,True,1,Alzheimer's disease,1
+Bachelor,female,1,Own,Employed,True,1,breast cancer,2
+Bachelor,female,1,Own,Employed,True,1,diabetes,2
+Bachelor,female,1,Own,Employed,True,1,endometriosis,2
+Bachelor,female,1,Own,Employed,True,1,gastritis,2
+Bachelor,female,1,Own,Employed,True,1,hypertension,2
+Bachelor,female,1,Own,Employed,True,1,kidney disease,1
+Bachelor,female,1,Own,Employed,True,1,schizophrenia,1
+Bachelor,female,1,Own,Employed,True,1+,Alzheimer's disease,1
+Bachelor,female,1,Own,Employed,True,1+,HIV/AIDS,2
+Bachelor,female,1,Own,Employed,True,1+,breast cancer,2
+Bachelor,female,1,Own,Employed,True,1+,diabetes,2
+Bachelor,female,1,Own,Employed,True,1+,endometriosis,2
+Bachelor,female,1,Own,Employed,True,1+,gastritis,8
+Bachelor,female,1,Own,Employed,True,1+,heart disease,2
+Bachelor,female,1,Own,Employed,True,1+,hypertension,3
+Bachelor,female,1,Own,Employed,True,1+,kidney disease,3
+Bachelor,female,1,Own,Employed,True,1+,skin cancer,2
+Bachelor,female,1,Own,Retired,True,0,Alzheimer's disease,4
+Bachelor,female,1,Own,Retired,True,0,breast cancer,3
+Bachelor,female,1,Own,Retired,True,0,diabetes,4
+Bachelor,female,1,Own,Retired,True,0,endometriosis,4
+Bachelor,female,1,Own,Retired,True,0,gastritis,2
+Bachelor,female,1,Own,Retired,True,0,heart disease,2
+Bachelor,female,1,Own,Retired,True,0,hypertension,2
+Bachelor,female,1,Own,Retired,True,0,kidney disease,2
+Bachelor,female,1,Own,Retired,True,0,multiple sclerosis,9
+Bachelor,female,1,Own,Retired,True,0,schizophrenia,3
+Bachelor,female,1,Own,Retired,True,0,skin cancer,2
+Bachelor,female,1,Own,Unemployed,True,0,gastritis,1
+Bachelor,female,1,Own,Unemployed,True,0,heart disease,1
+Bachelor,female,1,Own,Unemployed,True,0,schizophrenia,1
+Bachelor,female,1,Rent,Employed,True,1+,gastritis,2
+Bachelor,female,1,Rent,Retired,True,0,kidney disease,1
+Bachelor,female,1,Rent,Retired,True,0,multiple sclerosis,1
+Bachelor,female,1,Rent,Student,True,1+,Alzheimer's disease,1
+Bachelor,female,1,Rent,Student,True,1+,gastritis,1
+Bachelor,female,1,Rent,Unemployed,True,0,breast cancer,1
+Bachelor,female,1,Rent,Unemployed,True,0,gastritis,1
+Bachelor,female,1,Rent,Unemployed,True,0,heart disease,1
+Bachelor,female,1,Rent,Unemployed,True,0,hypertension,2
+Bachelor,female,1,Rent,Unemployed,True,0,kidney disease,1
+Bachelor,female,1,Rent,Unemployed,True,0,schizophrenia,1
+Bachelor,female,1,Rent,Unemployed,True,0,skin cancer,2
+Bachelor,female,2,Own,Employed,True,0,gastritis,1
+Bachelor,female,2,Own,Employed,True,0,heart disease,1
+Bachelor,female,2,Own,Employed,True,0,kidney disease,1
+Bachelor,female,2,Own,Employed,True,1,HIV/AIDS,2
+Bachelor,female,2,Own,Employed,True,1,gastritis,1
+Bachelor,female,2,Own,Employed,True,1+,Alzheimer's disease,2
+Bachelor,female,2,Own,Employed,True,1+,HIV/AIDS,3
+Bachelor,female,2,Own,Employed,True,1+,breast cancer,2
+Bachelor,female,2,Own,Employed,True,1+,diabetes,1
+Bachelor,female,2,Own,Employed,True,1+,endometriosis,2
+Bachelor,female,2,Own,Employed,True,1+,heart disease,1
+Bachelor,female,2,Own,Employed,True,1+,hypertension,3
+Bachelor,female,2,Own,Employed,True,1+,kidney disease,1
+Bachelor,female,2,Own,Employed,True,1+,multiple sclerosis,1
+Bachelor,female,2,Own,Employed,True,1+,schizophrenia,1
+Bachelor,female,2,Own,Employed,True,1+,skin cancer,1
+Bachelor,female,2,Own,Retired,True,0,Alzheimer's disease,4
+Bachelor,female,2,Own,Retired,True,0,breast cancer,2
+Bachelor,female,2,Own,Retired,True,0,diabetes,1
+Bachelor,female,2,Own,Retired,True,0,endometriosis,3
+Bachelor,female,2,Own,Retired,True,0,gastritis,2
+Bachelor,female,2,Own,Retired,True,0,heart disease,2
+Bachelor,female,2,Own,Retired,True,0,hypertension,3
+Bachelor,female,2,Own,Retired,True,0,multiple sclerosis,2
+Bachelor,female,2,Own,Retired,True,0,skin cancer,1
+Bachelor,female,2,Rent,Retired,True,0,Alzheimer's disease,1
+Bachelor,female,2,Rent,Retired,True,0,hypertension,1
+Bachelor,female,2,Rent,Retired,True,0,skin cancer,2
+Bachelor,female,2,Rent,Student,True,1+,gastritis,2
+Bachelor,female,2,Rent,Student,True,1+,hypertension,1
+Bachelor,female,2,Rent,Student,True,1+,skin cancer,1
+Bachelor,male,0,Own,Employed,True,0,endometriosis,2
+Bachelor,male,0,Own,Employed,True,0,gastritis,1
+Bachelor,male,0,Own,Employed,True,0,heart disease,1
+Bachelor,male,0,Own,Employed,True,1,Alzheimer's disease,1
+Bachelor,male,0,Own,Employed,True,1,gastritis,1
+Bachelor,male,0,Own,Employed,True,1,heart disease,1
+Bachelor,male,0,Own,Employed,True,1,hypertension,2
+Bachelor,male,0,Own,Employed,True,1,kidney disease,1
+Bachelor,male,0,Own,Employed,True,1,skin cancer,2
+Bachelor,male,0,Own,Employed,True,1+,HIV/AIDS,1
+Bachelor,male,0,Own,Employed,True,1+,diabetes,1
+Bachelor,male,0,Own,Employed,True,1+,endometriosis,1
+Bachelor,male,0,Own,Employed,True,1+,heart disease,1
+Bachelor,male,0,Own,Employed,True,1+,kidney disease,1
+Bachelor,male,0,Own,Employed,True,1+,skin cancer,1
+Bachelor,male,0,Own,Retired,True,0,HIV/AIDS,2
+Bachelor,male,0,Own,Retired,True,0,diabetes,1
+Bachelor,male,0,Own,Retired,True,0,endometriosis,2
+Bachelor,male,0,Own,Retired,True,0,gastritis,2
+Bachelor,male,0,Own,Retired,True,0,hypertension,3
+Bachelor,male,0,Own,Retired,True,0,kidney disease,2
+Bachelor,male,0,Own,Retired,True,0,schizophrenia,1
+Bachelor,male,0,Own,Retired,True,0,skin cancer,1
+Bachelor,male,0,Own,Student,True,0,gastritis,1
+Bachelor,male,0,Own,Student,True,0,skin cancer,1
+Bachelor,male,0,Own,Unemployed,True,0,endometriosis,1
+Bachelor,male,0,Own,Unemployed,True,0,gastritis,1
+Bachelor,male,0,Own,Unemployed,True,0,hypertension,1
+Bachelor,male,0,Own,Unemployed,True,0,schizophrenia,1
+Bachelor,male,0,Own,Unemployed,True,0,skin cancer,1
+Bachelor,male,0,Rent,Employed,False,1,hypertension,1
+Bachelor,male,0,Rent,Employed,False,1,multiple sclerosis,1
+Bachelor,male,0,Rent,Employed,False,1,skin cancer,2
+Bachelor,male,0,Rent,Employed,True,0,Alzheimer's disease,1
+Bachelor,male,0,Rent,Employed,True,0,heart disease,1
+Bachelor,male,0,Rent,Employed,True,0,prostate cancer,1
+Bachelor,male,0,Rent,Employed,True,0,schizophrenia,2
+Bachelor,male,0,Rent,Employed,True,0,skin cancer,1
+Bachelor,male,0,Rent,Employed,True,1,Alzheimer's disease,1
+Bachelor,male,0,Rent,Employed,True,1,gastritis,4
+Bachelor,male,0,Rent,Employed,True,1,heart disease,1
+Bachelor,male,0,Rent,Employed,True,1,hypertension,2
+Bachelor,male,0,Rent,Employed,True,1,kidney disease,2
+Bachelor,male,0,Rent,Employed,True,1,prostate cancer,2
+Bachelor,male,0,Rent,Employed,True,1,skin cancer,2
+Bachelor,male,0,Rent,Employed,True,1+,Alzheimer's disease,1
+Bachelor,male,0,Rent,Employed,True,1+,diabetes,2
+Bachelor,male,0,Rent,Employed,True,1+,gastritis,5
+Bachelor,male,0,Rent,Employed,True,1+,heart disease,2
+Bachelor,male,0,Rent,Employed,True,1+,hypertension,3
+Bachelor,male,0,Rent,Employed,True,1+,multiple sclerosis,2
+Bachelor,male,0,Rent,Employed,True,1+,prostate cancer,1
+Bachelor,male,0,Rent,Employed,True,1+,schizophrenia,1
+Bachelor,male,0,Rent,Retired,False,0,Alzheimer's disease,2
+Bachelor,male,0,Rent,Retired,True,0,Alzheimer's disease,5
+Bachelor,male,0,Rent,Retired,True,0,HIV/AIDS,2
+Bachelor,male,0,Rent,Retired,True,0,diabetes,3
+Bachelor,male,0,Rent,Retired,True,0,endometriosis,7
+Bachelor,male,0,Rent,Retired,True,0,gastritis,2
+Bachelor,male,0,Rent,Retired,True,0,heart disease,1
+Bachelor,male,0,Rent,Retired,True,0,hypertension,5
+Bachelor,male,0,Rent,Retired,True,0,kidney disease,2
+Bachelor,male,0,Rent,Retired,True,0,multiple sclerosis,1
+Bachelor,male,0,Rent,Retired,True,0,prostate cancer,3
+Bachelor,male,0,Rent,Retired,True,0,schizophrenia,4
+Bachelor,male,0,Rent,Retired,True,0,skin cancer,2
+Bachelor,male,0,Rent,Student,True,1,gastritis,1
+Bachelor,male,0,Rent,Student,True,1,kidney disease,1
+Bachelor,male,0,Rent,Student,True,1+,HIV/AIDS,1
+Bachelor,male,0,Rent,Student,True,1+,heart disease,1
+Bachelor,male,0,Rent,Student,True,1+,schizophrenia,1
+Bachelor,male,0,Rent,Unemployed,True,0,Alzheimer's disease,1
+Bachelor,male,0,Rent,Unemployed,True,0,HIV/AIDS,2
+Bachelor,male,0,Rent,Unemployed,True,0,gastritis,1
+Bachelor,male,0,Rent,Unemployed,True,0,heart disease,2
+Bachelor,male,0,Rent,Unemployed,True,0,kidney disease,2
+Bachelor,male,0,Rent,Unemployed,True,0,multiple sclerosis,1
+Bachelor,male,0,Rent,Unemployed,True,0,prostate cancer,1
+Bachelor,male,1,Own,Employed,False,1+,hypertension,2
+Bachelor,male,1,Own,Employed,True,0,heart disease,1
+Bachelor,male,1,Own,Employed,True,0,hypertension,1
+Bachelor,male,1,Own,Employed,True,1,HIV/AIDS,1
+Bachelor,male,1,Own,Employed,True,1,endometriosis,1
+Bachelor,male,1,Own,Employed,True,1,gastritis,1
+Bachelor,male,1,Own,Employed,True,1,heart disease,1
+Bachelor,male,1,Own,Employed,True,1,hypertension,1
+Bachelor,male,1,Own,Employed,True,1,kidney disease,1
+Bachelor,male,1,Own,Employed,True,1,multiple sclerosis,2
+Bachelor,male,1,Own,Employed,True,1,skin cancer,1
+Bachelor,male,1,Own,Employed,True,1+,HIV/AIDS,2
+Bachelor,male,1,Own,Employed,True,1+,diabetes,1
+Bachelor,male,1,Own,Employed,True,1+,gastritis,3
+Bachelor,male,1,Own,Employed,True,1+,heart disease,4
+Bachelor,male,1,Own,Employed,True,1+,hypertension,9
+Bachelor,male,1,Own,Employed,True,1+,kidney disease,2
+Bachelor,male,1,Own,Employed,True,1+,multiple sclerosis,3
+Bachelor,male,1,Own,Employed,True,1+,prostate cancer,1
+Bachelor,male,1,Own,Employed,True,1+,schizophrenia,2
+Bachelor,male,1,Own,Retired,False,0,diabetes,1
+Bachelor,male,1,Own,Retired,False,0,hypertension,1
+Bachelor,male,1,Own,Retired,False,0,schizophrenia,2
+Bachelor,male,1,Own,Retired,True,0,Alzheimer's disease,2
+Bachelor,male,1,Own,Retired,True,0,HIV/AIDS,1
+Bachelor,male,1,Own,Retired,True,0,diabetes,5
+Bachelor,male,1,Own,Retired,True,0,endometriosis,7
+Bachelor,male,1,Own,Retired,True,0,gastritis,2
+Bachelor,male,1,Own,Retired,True,0,heart disease,7
+Bachelor,male,1,Own,Retired,True,0,hypertension,6
+Bachelor,male,1,Own,Retired,True,0,multiple sclerosis,6
+Bachelor,male,1,Own,Retired,True,0,prostate cancer,5
+Bachelor,male,1,Own,Retired,True,0,schizophrenia,3
+Bachelor,male,1,Own,Student,True,1,diabetes,1
+Bachelor,male,1,Own,Student,True,1,schizophrenia,1
+Bachelor,male,1,Own,Student,True,1+,gastritis,1
+Bachelor,male,1,Own,Student,True,1+,kidney disease,1
+Bachelor,male,1,Own,Student,True,1+,multiple sclerosis,1
+Bachelor,male,1,Rent,Employed,True,1,Alzheimer's disease,1
+Bachelor,male,1,Rent,Employed,True,1,hypertension,1
+Bachelor,male,1,Rent,Employed,True,1+,heart disease,1
+Bachelor,male,1,Rent,Employed,True,1+,hypertension,1
+Bachelor,male,1,Rent,Student,True,1+,HIV/AIDS,1
+Bachelor,male,1,Rent,Student,True,1+,schizophrenia,1
+Bachelor,male,1,Rent,Unemployed,True,0,Alzheimer's disease,2
+Bachelor,male,1,Rent,Unemployed,True,0,HIV/AIDS,2
+Bachelor,male,1,Rent,Unemployed,True,0,diabetes,1
+Bachelor,male,1,Rent,Unemployed,True,0,kidney disease,1
+Bachelor,male,1,Rent,Unemployed,True,0,multiple sclerosis,1
+Bachelor,male,1,Rent,Unemployed,True,0,prostate cancer,1
+Bachelor,male,1,Rent,Unemployed,True,0,skin cancer,1
+Bachelor,male,2,Own,Employed,True,0,HIV/AIDS,1
+Bachelor,male,2,Own,Employed,True,0,hypertension,1
+Bachelor,male,2,Own,Employed,True,1,diabetes,1
+Bachelor,male,2,Own,Employed,True,1,heart disease,2
+Bachelor,male,2,Own,Employed,True,1,hypertension,1
+Bachelor,male,2,Own,Employed,True,1+,Alzheimer's disease,1
+Bachelor,male,2,Own,Employed,True,1+,HIV/AIDS,2
+Bachelor,male,2,Own,Employed,True,1+,diabetes,1
+Bachelor,male,2,Own,Employed,True,1+,endometriosis,1
+Bachelor,male,2,Own,Employed,True,1+,heart disease,3
+Bachelor,male,2,Own,Employed,True,1+,hypertension,4
+Bachelor,male,2,Own,Employed,True,1+,prostate cancer,3
+Bachelor,male,2,Own,Employed,True,1+,schizophrenia,1
+Bachelor,male,2,Own,Employed,True,1+,skin cancer,1
+Bachelor,male,2,Own,Retired,True,0,Alzheimer's disease,1
+Bachelor,male,2,Own,Retired,True,0,HIV/AIDS,3
+Bachelor,male,2,Own,Retired,True,0,diabetes,5
+Bachelor,male,2,Own,Retired,True,0,endometriosis,3
+Bachelor,male,2,Own,Retired,True,0,hypertension,5
+Bachelor,male,2,Own,Retired,True,0,kidney disease,1
+Bachelor,male,2,Own,Retired,True,0,multiple sclerosis,1
+Bachelor,male,2,Own,Retired,True,0,prostate cancer,2
+Bachelor,male,2,Own,Retired,True,0,schizophrenia,2
+Bachelor,male,2,Own,Retired,True,0,skin cancer,3
+Bachelor,male,2,Own,Unemployed,True,0,multiple sclerosis,1
+Bachelor,male,2,Own,Unemployed,True,0,skin cancer,1
+Bachelor,male,2,Rent,Unemployed,True,0,diabetes,1
+Bachelor,male,2,Rent,Unemployed,True,0,skin cancer,1
+High School,female,0,Own,Employed,True,0,diabetes,1
+High School,female,0,Own,Employed,True,0,hypertension,1
+High School,female,0,Own,Employed,True,1,Alzheimer's disease,3
+High School,female,0,Own,Employed,True,1,breast cancer,1
+High School,female,0,Own,Employed,True,1,gastritis,1
+High School,female,0,Own,Employed,True,1,heart disease,1
+High School,female,0,Own,Employed,True,1,hypertension,1
+High School,female,0,Own,Employed,True,1,kidney disease,1
+High School,female,0,Own,Employed,True,1,skin cancer,1
+High School,female,0,Own,Employed,True,1+,diabetes,1
+High School,female,0,Own,Employed,True,1+,kidney disease,1
+High School,female,0,Own,Employed,True,1+,schizophrenia,1
+High School,female,0,Own,Employed,True,1+,skin cancer,1
+High School,female,0,Own,Retired,True,0,breast cancer,1
+High School,female,0,Own,Retired,True,0,diabetes,1
+High School,female,0,Own,Retired,True,0,gastritis,3
+High School,female,0,Own,Retired,True,0,heart disease,2
+High School,female,0,Own,Retired,True,0,hypertension,2
+High School,female,0,Own,Retired,True,0,kidney disease,1
+High School,female,0,Own,Retired,True,0,multiple sclerosis,3
+High School,female,0,Own,Retired,True,0,schizophrenia,3
+High School,female,0,Own,Student,False,1,gastritis,1
+High School,female,0,Own,Student,False,1,heart disease,1
+High School,female,0,Own,Unemployed,True,0,breast cancer,1
+High School,female,0,Own,Unemployed,True,0,diabetes,1
+High School,female,0,Own,Unemployed,True,0,kidney disease,2
+High School,female,0,Rent,Employed,False,1+,gastritis,1
+High School,female,0,Rent,Employed,False,1+,kidney disease,1
+High School,female,0,Rent,Employed,True,0,Alzheimer's disease,1
+High School,female,0,Rent,Employed,True,0,breast cancer,1
+High School,female,0,Rent,Employed,True,0,diabetes,1
+High School,female,0,Rent,Employed,True,0,gastritis,1
+High School,female,0,Rent,Employed,True,0,heart disease,2
+High School,female,0,Rent,Employed,True,0,hypertension,2
+High School,female,0,Rent,Employed,True,0,schizophrenia,2
+High School,female,0,Rent,Employed,True,1,Alzheimer's disease,1
+High School,female,0,Rent,Employed,True,1,HIV/AIDS,1
+High School,female,0,Rent,Employed,True,1,breast cancer,2
+High School,female,0,Rent,Employed,True,1,endometriosis,1
+High School,female,0,Rent,Employed,True,1,heart disease,2
+High School,female,0,Rent,Employed,True,1,hypertension,4
+High School,female,0,Rent,Employed,True,1,multiple sclerosis,1
+High School,female,0,Rent,Employed,True,1,schizophrenia,1
+High School,female,0,Rent,Employed,True,1,skin cancer,2
+High School,female,0,Rent,Employed,True,1+,HIV/AIDS,3
+High School,female,0,Rent,Employed,True,1+,breast cancer,3
+High School,female,0,Rent,Employed,True,1+,diabetes,1
+High School,female,0,Rent,Employed,True,1+,endometriosis,1
+High School,female,0,Rent,Employed,True,1+,gastritis,2
+High School,female,0,Rent,Employed,True,1+,heart disease,3
+High School,female,0,Rent,Employed,True,1+,hypertension,5
+High School,female,0,Rent,Employed,True,1+,kidney disease,1
+High School,female,0,Rent,Employed,True,1+,multiple sclerosis,1
+High School,female,0,Rent,Employed,True,1+,schizophrenia,1
+High School,female,0,Rent,Employed,True,1+,skin cancer,5
+High School,female,0,Rent,Retired,False,0,Alzheimer's disease,1
+High School,female,0,Rent,Retired,False,0,schizophrenia,1
+High School,female,0,Rent,Retired,True,0,Alzheimer's disease,9
+High School,female,0,Rent,Retired,True,0,HIV/AIDS,2
+High School,female,0,Rent,Retired,True,0,breast cancer,3
+High School,female,0,Rent,Retired,True,0,diabetes,3
+High School,female,0,Rent,Retired,True,0,endometriosis,2
+High School,female,0,Rent,Retired,True,0,gastritis,6
+High School,female,0,Rent,Retired,True,0,heart disease,7
+High School,female,0,Rent,Retired,True,0,hypertension,7
+High School,female,0,Rent,Retired,True,0,kidney disease,1
+High School,female,0,Rent,Retired,True,0,multiple sclerosis,2
+High School,female,0,Rent,Retired,True,0,schizophrenia,4
+High School,female,0,Rent,Retired,True,0,skin cancer,2
+High School,female,0,Rent,Student,False,1+,HIV/AIDS,1
+High School,female,0,Rent,Student,False,1+,endometriosis,1
+High School,female,0,Rent,Student,False,1+,gastritis,1
+High School,female,0,Rent,Student,False,1+,heart disease,1
+High School,female,0,Rent,Student,False,1+,hypertension,1
+High School,female,0,Rent,Student,True,1+,HIV/AIDS,2
+High School,female,0,Rent,Student,True,1+,heart disease,1
+High School,female,0,Rent,Student,True,1+,hypertension,1
+High School,female,0,Rent,Student,True,1+,skin cancer,1
+High School,female,0,Rent,Unemployed,False,0,gastritis,1
+High School,female,0,Rent,Unemployed,False,0,hypertension,1
+High School,female,0,Rent,Unemployed,False,0,kidney disease,1
+High School,female,0,Rent,Unemployed,False,0,skin cancer,1
+High School,female,0,Rent,Unemployed,True,0,Alzheimer's disease,2
+High School,female,0,Rent,Unemployed,True,0,HIV/AIDS,4
+High School,female,0,Rent,Unemployed,True,0,diabetes,1
+High School,female,0,Rent,Unemployed,True,0,gastritis,1
+High School,female,0,Rent,Unemployed,True,0,hypertension,1
+High School,female,0,Rent,Unemployed,True,0,kidney disease,2
+High School,female,0,Rent,Unemployed,True,0,multiple sclerosis,3
+High School,female,0,Rent,Unemployed,True,0,skin cancer,2
+High School,female,1,Own,Employed,False,1+,heart disease,1
+High School,female,1,Own,Employed,False,1+,skin cancer,1
+High School,female,1,Own,Employed,True,0,HIV/AIDS,1
+High School,female,1,Own,Employed,True,0,gastritis,2
+High School,female,1,Own,Employed,True,0,heart disease,1
+High School,female,1,Own,Employed,True,0,hypertension,1
+High School,female,1,Own,Employed,True,0,multiple sclerosis,2
+High School,female,1,Own,Employed,True,0,skin cancer,2
+High School,female,1,Own,Employed,True,1,HIV/AIDS,1
+High School,female,1,Own,Employed,True,1,breast cancer,2
+High School,female,1,Own,Employed,True,1,diabetes,1
+High School,female,1,Own,Employed,True,1,endometriosis,1
+High School,female,1,Own,Employed,True,1,gastritis,2
+High School,female,1,Own,Employed,True,1,heart disease,1
+High School,female,1,Own,Employed,True,1,hypertension,2
+High School,female,1,Own,Employed,True,1,schizophrenia,3
+High School,female,1,Own,Employed,True,1,skin cancer,1
+High School,female,1,Own,Employed,True,1+,Alzheimer's disease,2
+High School,female,1,Own,Employed,True,1+,HIV/AIDS,4
+High School,female,1,Own,Employed,True,1+,breast cancer,3
+High School,female,1,Own,Employed,True,1+,diabetes,3
+High School,female,1,Own,Employed,True,1+,endometriosis,1
+High School,female,1,Own,Employed,True,1+,gastritis,2
+High School,female,1,Own,Employed,True,1+,heart disease,2
+High School,female,1,Own,Employed,True,1+,hypertension,9
+High School,female,1,Own,Employed,True,1+,kidney disease,2
+High School,female,1,Own,Employed,True,1+,schizophrenia,2
+High School,female,1,Own,Employed,True,1+,skin cancer,4
+High School,female,1,Own,Retired,True,0,Alzheimer's disease,6
+High School,female,1,Own,Retired,True,0,breast cancer,3
+High School,female,1,Own,Retired,True,0,diabetes,4
+High School,female,1,Own,Retired,True,0,endometriosis,5
+High School,female,1,Own,Retired,True,0,gastritis,6
+High School,female,1,Own,Retired,True,0,heart disease,1
+High School,female,1,Own,Retired,True,0,hypertension,10
+High School,female,1,Own,Retired,True,0,kidney disease,1
+High School,female,1,Own,Retired,True,0,multiple sclerosis,8
+High School,female,1,Own,Retired,True,0,schizophrenia,4
+High School,female,1,Own,Retired,True,0,skin cancer,1
+High School,female,1,Own,Unemployed,False,0,breast cancer,1
+High School,female,1,Own,Unemployed,False,0,gastritis,1
+High School,female,1,Own,Unemployed,True,0,Alzheimer's disease,2
+High School,female,1,Own,Unemployed,True,0,HIV/AIDS,1
+High School,female,1,Own,Unemployed,True,0,gastritis,1
+High School,female,1,Own,Unemployed,True,0,hypertension,1
+High School,female,1,Rent,Employed,True,1+,Alzheimer's disease,1
+High School,female,1,Rent,Employed,True,1+,breast cancer,1
+High School,female,1,Rent,Employed,True,1+,gastritis,1
+High School,female,1,Rent,Employed,True,1+,heart disease,1
+High School,female,1,Rent,Retired,True,0,breast cancer,1
+High School,female,1,Rent,Retired,True,0,gastritis,1
+High School,female,1,Rent,Retired,True,0,multiple sclerosis,1
+High School,female,1,Rent,Student,False,1,heart disease,2
+High School,female,1,Rent,Student,False,1,skin cancer,1
+High School,female,1,Rent,Student,False,1+,HIV/AIDS,1
+High School,female,1,Rent,Student,False,1+,endometriosis,1
+High School,female,1,Rent,Student,False,1+,heart disease,1
+High School,female,1,Rent,Student,False,1+,hypertension,1
+High School,female,1,Rent,Student,False,1+,multiple sclerosis,1
+High School,female,1,Rent,Student,False,1+,skin cancer,1
+High School,female,1,Rent,Student,True,1+,diabetes,1
+High School,female,1,Rent,Student,True,1+,endometriosis,1
+High School,female,1,Rent,Student,True,1+,hypertension,2
+High School,female,1,Rent,Unemployed,True,0,Alzheimer's disease,1
+High School,female,1,Rent,Unemployed,True,0,diabetes,2
+High School,female,1,Rent,Unemployed,True,0,endometriosis,3
+High School,female,1,Rent,Unemployed,True,0,heart disease,1
+High School,female,1,Rent,Unemployed,True,0,hypertension,2
+High School,female,1,Rent,Unemployed,True,0,kidney disease,1
+High School,female,1,Rent,Unemployed,True,0,multiple sclerosis,1
+High School,female,1,Rent,Unemployed,True,0,schizophrenia,2
+High School,female,1,Rent,Unemployed,True,0,skin cancer,1
+High School,female,2,Own,Employed,False,1+,gastritis,2
+High School,female,2,Own,Employed,False,1+,heart disease,1
+High School,female,2,Own,Employed,False,1+,multiple sclerosis,1
+High School,female,2,Own,Employed,True,0,HIV/AIDS,1
+High School,female,2,Own,Employed,True,0,endometriosis,2
+High School,female,2,Own,Employed,True,0,gastritis,1
+High School,female,2,Own,Employed,True,0,schizophrenia,1
+High School,female,2,Own,Employed,True,1,hypertension,1
+High School,female,2,Own,Employed,True,1,multiple sclerosis,1
+High School,female,2,Own,Employed,True,1,skin cancer,1
+High School,female,2,Own,Employed,True,1+,Alzheimer's disease,2
+High School,female,2,Own,Employed,True,1+,HIV/AIDS,2
+High School,female,2,Own,Employed,True,1+,breast cancer,1
+High School,female,2,Own,Employed,True,1+,endometriosis,1
+High School,female,2,Own,Employed,True,1+,gastritis,2
+High School,female,2,Own,Employed,True,1+,heart disease,5
+High School,female,2,Own,Employed,True,1+,hypertension,3
+High School,female,2,Own,Employed,True,1+,kidney disease,1
+High School,female,2,Own,Employed,True,1+,multiple sclerosis,3
+High School,female,2,Own,Employed,True,1+,schizophrenia,4
+High School,female,2,Own,Employed,True,1+,skin cancer,2
+High School,female,2,Own,Retired,True,0,Alzheimer's disease,2
+High School,female,2,Own,Retired,True,0,breast cancer,2
+High School,female,2,Own,Retired,True,0,diabetes,1
+High School,female,2,Own,Retired,True,0,endometriosis,2
+High School,female,2,Own,Retired,True,0,gastritis,3
+High School,female,2,Own,Retired,True,0,heart disease,1
+High School,female,2,Own,Retired,True,0,hypertension,1
+High School,female,2,Own,Retired,True,0,kidney disease,1
+High School,female,2,Own,Retired,True,0,multiple sclerosis,4
+High School,female,2,Own,Retired,True,0,schizophrenia,2
+High School,female,2,Own,Retired,True,0,skin cancer,6
+High School,female,2,Own,Student,False,1+,HIV/AIDS,1
+High School,female,2,Own,Student,False,1+,skin cancer,1
+High School,female,2,Own,Unemployed,True,0,endometriosis,1
+High School,female,2,Own,Unemployed,True,0,gastritis,1
+High School,female,2,Own,Unemployed,True,0,hypertension,1
+High School,female,2,Own,Unemployed,True,0,schizophrenia,1
+High School,female,2,Rent,Student,True,1+,hypertension,1
+High School,female,2,Rent,Student,True,1+,kidney disease,1
+High School,female,2,Rent,Unemployed,True,0,HIV/AIDS,2
+High School,female,2,Rent,Unemployed,True,0,breast cancer,1
+High School,female,2,Rent,Unemployed,True,0,gastritis,1
+High School,female,2,Rent,Unemployed,True,0,kidney disease,1
+High School,female,2,Rent,Unemployed,True,0,multiple sclerosis,1
+High School,male,0,Own,Employed,True,0,Alzheimer's disease,1
+High School,male,0,Own,Employed,True,0,HIV/AIDS,1
+High School,male,0,Own,Employed,True,0,gastritis,1
+High School,male,0,Own,Employed,True,0,skin cancer,2
+High School,male,0,Own,Employed,True,1,endometriosis,1
+High School,male,0,Own,Employed,True,1,gastritis,1
+High School,male,0,Own,Employed,True,1,schizophrenia,1
+High School,male,0,Own,Employed,True,1,skin cancer,2
+High School,male,0,Own,Employed,True,1+,diabetes,1
+High School,male,0,Own,Employed,True,1+,gastritis,2
+High School,male,0,Own,Employed,True,1+,heart disease,4
+High School,male,0,Own,Employed,True,1+,hypertension,3
+High School,male,0,Own,Employed,True,1+,prostate cancer,1
+High School,male,0,Own,Employed,True,1+,schizophrenia,1
+High School,male,0,Own,Retired,True,0,Alzheimer's disease,3
+High School,male,0,Own,Retired,True,0,HIV/AIDS,1
+High School,male,0,Own,Retired,True,0,diabetes,1
+High School,male,0,Own,Retired,True,0,hypertension,3
+High School,male,0,Own,Retired,True,0,kidney disease,1
+High School,male,0,Own,Retired,True,0,multiple sclerosis,2
+High School,male,0,Own,Retired,True,0,prostate cancer,1
+High School,male,0,Own,Retired,True,0,skin cancer,1
+High School,male,0,Own,Student,False,1+,kidney disease,1
+High School,male,0,Own,Student,False,1+,skin cancer,1
+High School,male,0,Own,Student,True,0,endometriosis,1
+High School,male,0,Own,Student,True,0,gastritis,1
+High School,male,0,Rent,Employed,True,0,HIV/AIDS,1
+High School,male,0,Rent,Employed,True,0,endometriosis,1
+High School,male,0,Rent,Employed,True,0,gastritis,3
+High School,male,0,Rent,Employed,True,0,heart disease,1
+High School,male,0,Rent,Employed,True,0,hypertension,4
+High School,male,0,Rent,Employed,True,0,kidney disease,2
+High School,male,0,Rent,Employed,True,0,multiple sclerosis,1
+High School,male,0,Rent,Employed,True,0,schizophrenia,1
+High School,male,0,Rent,Employed,True,0,skin cancer,1
+High School,male,0,Rent,Employed,True,1,Alzheimer's disease,1
+High School,male,0,Rent,Employed,True,1,HIV/AIDS,1
+High School,male,0,Rent,Employed,True,1,diabetes,1
+High School,male,0,Rent,Employed,True,1,endometriosis,1
+High School,male,0,Rent,Employed,True,1,gastritis,3
+High School,male,0,Rent,Employed,True,1,heart disease,4
+High School,male,0,Rent,Employed,True,1,hypertension,4
+High School,male,0,Rent,Employed,True,1,kidney disease,2
+High School,male,0,Rent,Employed,True,1,multiple sclerosis,1
+High School,male,0,Rent,Employed,True,1,schizophrenia,2
+High School,male,0,Rent,Employed,True,1,skin cancer,1
+High School,male,0,Rent,Employed,True,1+,HIV/AIDS,2
+High School,male,0,Rent,Employed,True,1+,diabetes,3
+High School,male,0,Rent,Employed,True,1+,endometriosis,5
+High School,male,0,Rent,Employed,True,1+,gastritis,5
+High School,male,0,Rent,Employed,True,1+,heart disease,2
+High School,male,0,Rent,Employed,True,1+,hypertension,2
+High School,male,0,Rent,Employed,True,1+,kidney disease,1
+High School,male,0,Rent,Employed,True,1+,multiple sclerosis,2
+High School,male,0,Rent,Employed,True,1+,schizophrenia,1
+High School,male,0,Rent,Employed,True,1+,skin cancer,1
+High School,male,0,Rent,Retired,False,0,Alzheimer's disease,1
+High School,male,0,Rent,Retired,False,0,HIV/AIDS,1
+High School,male,0,Rent,Retired,False,0,heart disease,1
+High School,male,0,Rent,Retired,False,0,kidney disease,1
+High School,male,0,Rent,Retired,True,0,Alzheimer's disease,4
+High School,male,0,Rent,Retired,True,0,HIV/AIDS,6
+High School,male,0,Rent,Retired,True,0,diabetes,4
+High School,male,0,Rent,Retired,True,0,endometriosis,6
+High School,male,0,Rent,Retired,True,0,gastritis,3
+High School,male,0,Rent,Retired,True,0,heart disease,6
+High School,male,0,Rent,Retired,True,0,hypertension,4
+High School,male,0,Rent,Retired,True,0,kidney disease,2
+High School,male,0,Rent,Retired,True,0,multiple sclerosis,5
+High School,male,0,Rent,Retired,True,0,prostate cancer,5
+High School,male,0,Rent,Retired,True,0,skin cancer,4
+High School,male,0,Rent,Student,False,1,endometriosis,1
+High School,male,0,Rent,Student,False,1,gastritis,3
+High School,male,0,Rent,Student,False,1+,gastritis,3
+High School,male,0,Rent,Student,False,1+,skin cancer,3
+High School,male,0,Rent,Unemployed,False,0,HIV/AIDS,1
+High School,male,0,Rent,Unemployed,False,0,kidney disease,2
+High School,male,0,Rent,Unemployed,True,0,Alzheimer's disease,2
+High School,male,0,Rent,Unemployed,True,0,diabetes,1
+High School,male,0,Rent,Unemployed,True,0,gastritis,1
+High School,male,0,Rent,Unemployed,True,0,heart disease,1
+High School,male,0,Rent,Unemployed,True,0,kidney disease,2
+High School,male,0,Rent,Unemployed,True,0,prostate cancer,1
+High School,male,0,Rent,Unemployed,True,0,schizophrenia,2
+High School,male,1,Own,Employed,True,0,kidney disease,1
+High School,male,1,Own,Employed,True,0,skin cancer,1
+High School,male,1,Own,Employed,True,1,HIV/AIDS,3
+High School,male,1,Own,Employed,True,1,gastritis,1
+High School,male,1,Own,Employed,True,1,hypertension,2
+High School,male,1,Own,Employed,True,1,kidney disease,2
+High School,male,1,Own,Employed,True,1,multiple sclerosis,2
+High School,male,1,Own,Employed,True,1+,Alzheimer's disease,1
+High School,male,1,Own,Employed,True,1+,HIV/AIDS,3
+High School,male,1,Own,Employed,True,1+,diabetes,7
+High School,male,1,Own,Employed,True,1+,endometriosis,2
+High School,male,1,Own,Employed,True,1+,gastritis,12
+High School,male,1,Own,Employed,True,1+,heart disease,6
+High School,male,1,Own,Employed,True,1+,hypertension,6
+High School,male,1,Own,Employed,True,1+,kidney disease,1
+High School,male,1,Own,Employed,True,1+,multiple sclerosis,4
+High School,male,1,Own,Employed,True,1+,prostate cancer,5
+High School,male,1,Own,Employed,True,1+,schizophrenia,5
+High School,male,1,Own,Retired,False,0,Alzheimer's disease,1
+High School,male,1,Own,Retired,False,0,endometriosis,1
+High School,male,1,Own,Retired,False,0,hypertension,1
+High School,male,1,Own,Retired,False,0,prostate cancer,1
+High School,male,1,Own,Retired,True,0,Alzheimer's disease,3
+High School,male,1,Own,Retired,True,0,HIV/AIDS,6
+High School,male,1,Own,Retired,True,0,diabetes,4
+High School,male,1,Own,Retired,True,0,endometriosis,5
+High School,male,1,Own,Retired,True,0,gastritis,5
+High School,male,1,Own,Retired,True,0,heart disease,3
+High School,male,1,Own,Retired,True,0,hypertension,7
+High School,male,1,Own,Retired,True,0,kidney disease,2
+High School,male,1,Own,Retired,True,0,multiple sclerosis,4
+High School,male,1,Own,Retired,True,0,prostate cancer,4
+High School,male,1,Own,Retired,True,0,schizophrenia,3
+High School,male,1,Own,Retired,True,0,skin cancer,3
+High School,male,1,Own,Student,False,1+,heart disease,1
+High School,male,1,Own,Student,False,1+,skin cancer,1
+High School,male,1,Own,Unemployed,True,0,gastritis,1
+High School,male,1,Own,Unemployed,True,0,multiple sclerosis,1
+High School,male,1,Own,Unemployed,True,0,prostate cancer,1
+High School,male,1,Rent,Employed,True,1+,HIV/AIDS,1
+High School,male,1,Rent,Employed,True,1+,gastritis,1
+High School,male,1,Rent,Employed,True,1+,multiple sclerosis,1
+High School,male,1,Rent,Retired,True,0,Alzheimer's disease,1
+High School,male,1,Rent,Retired,True,0,gastritis,1
+High School,male,1,Rent,Student,True,1+,gastritis,1
+High School,male,1,Rent,Student,True,1+,hypertension,1
+High School,male,1,Rent,Unemployed,False,0,HIV/AIDS,1
+High School,male,1,Rent,Unemployed,False,0,prostate cancer,1
+High School,male,1,Rent,Unemployed,True,0,HIV/AIDS,1
+High School,male,1,Rent,Unemployed,True,0,diabetes,4
+High School,male,1,Rent,Unemployed,True,0,gastritis,1
+High School,male,1,Rent,Unemployed,True,0,heart disease,1
+High School,male,1,Rent,Unemployed,True,0,multiple sclerosis,2
+High School,male,1,Rent,Unemployed,True,0,schizophrenia,3
+High School,male,1,Rent,Unemployed,True,0,skin cancer,1
+High School,male,2,Own,Employed,False,1+,HIV/AIDS,1
+High School,male,2,Own,Employed,False,1+,endometriosis,1
+High School,male,2,Own,Employed,False,1+,schizophrenia,1
+High School,male,2,Own,Employed,True,0,HIV/AIDS,1
+High School,male,2,Own,Employed,True,0,diabetes,1
+High School,male,2,Own,Employed,True,0,hypertension,1
+High School,male,2,Own,Employed,True,0,multiple sclerosis,1
+High School,male,2,Own,Employed,True,1,HIV/AIDS,1
+High School,male,2,Own,Employed,True,1,diabetes,3
+High School,male,2,Own,Employed,True,1,gastritis,1
+High School,male,2,Own,Employed,True,1,hypertension,1
+High School,male,2,Own,Employed,True,1,kidney disease,2
+High School,male,2,Own,Employed,True,1+,Alzheimer's disease,1
+High School,male,2,Own,Employed,True,1+,HIV/AIDS,2
+High School,male,2,Own,Employed,True,1+,endometriosis,1
+High School,male,2,Own,Employed,True,1+,gastritis,2
+High School,male,2,Own,Employed,True,1+,heart disease,1
+High School,male,2,Own,Employed,True,1+,hypertension,4
+High School,male,2,Own,Employed,True,1+,kidney disease,1
+High School,male,2,Own,Employed,True,1+,multiple sclerosis,1
+High School,male,2,Own,Employed,True,1+,schizophrenia,1
+High School,male,2,Own,Retired,True,0,Alzheimer's disease,1
+High School,male,2,Own,Retired,True,0,HIV/AIDS,1
+High School,male,2,Own,Retired,True,0,diabetes,2
+High School,male,2,Own,Retired,True,0,endometriosis,1
+High School,male,2,Own,Retired,True,0,gastritis,1
+High School,male,2,Own,Retired,True,0,heart disease,2
+High School,male,2,Own,Retired,True,0,hypertension,1
+High School,male,2,Own,Retired,True,0,kidney disease,3
+High School,male,2,Own,Retired,True,0,multiple sclerosis,1
+High School,male,2,Own,Retired,True,0,prostate cancer,2
+High School,male,2,Own,Retired,True,0,schizophrenia,2
+High School,male,2,Own,Retired,True,0,skin cancer,2
+High School,male,2,Own,Unemployed,True,0,prostate cancer,1
+High School,male,2,Own,Unemployed,True,0,skin cancer,1
+High School,male,2,Rent,Retired,True,0,hypertension,1
+High School,male,2,Rent,Retired,True,0,schizophrenia,1
+High School,male,2,Rent,Unemployed,True,0,Alzheimer's disease,1
+High School,male,2,Rent,Unemployed,True,0,HIV/AIDS,3
+High School,male,2,Rent,Unemployed,True,0,endometriosis,3
+High School,male,2,Rent,Unemployed,True,0,heart disease,1
+High School,male,2,Rent,Unemployed,True,0,kidney disease,1
+High School,male,2,Rent,Unemployed,True,0,prostate cancer,1
+High School,male,2,Rent,Unemployed,True,0,skin cancer,2
+Less than High School,female,0,Own,Employed,True,1,breast cancer,1
+Less than High School,female,0,Own,Employed,True,1,hypertension,1
+Less than High School,female,0,Own,Employed,True,1+,gastritis,1
+Less than High School,female,0,Own,Employed,True,1+,heart disease,1
+Less than High School,female,0,Own,Employed,True,1+,hypertension,1
+Less than High School,female,0,Own,Retired,True,0,HIV/AIDS,1
+Less than High School,female,0,Own,Retired,True,0,endometriosis,1
+Less than High School,female,0,Own,Retired,True,0,gastritis,1
+Less than High School,female,0,Own,Retired,True,0,hypertension,1
+Less than High School,female,0,Own,Unemployed,True,0,kidney disease,1
+Less than High School,female,0,Own,Unemployed,True,0,schizophrenia,1
+Less than High School,female,0,Rent,Employed,True,1,gastritis,1
+Less than High School,female,0,Rent,Employed,True,1,kidney disease,2
+Less than High School,female,0,Rent,Employed,True,1+,gastritis,3
+Less than High School,female,0,Rent,Employed,True,1+,heart disease,1
+Less than High School,female,0,Rent,Employed,True,1+,schizophrenia,2
+Less than High School,female,0,Rent,Employed,True,1+,skin cancer,4
+Less than High School,female,0,Rent,Retired,True,0,Alzheimer's disease,1
+Less than High School,female,0,Rent,Retired,True,0,HIV/AIDS,1
+Less than High School,female,0,Rent,Retired,True,0,diabetes,2
+Less than High School,female,0,Rent,Retired,True,0,endometriosis,2
+Less than High School,female,0,Rent,Retired,True,0,heart disease,1
+Less than High School,female,0,Rent,Retired,True,0,hypertension,2
+Less than High School,female,0,Rent,Retired,True,0,multiple sclerosis,1
+Less than High School,female,0,Rent,Unemployed,True,0,breast cancer,1
+Less than High School,female,0,Rent,Unemployed,True,0,schizophrenia,1
+Less than High School,female,0,Rent,Unemployed,True,0,skin cancer,1
+Less than High School,female,1,Own,Employed,True,1,breast cancer,1
+Less than High School,female,1,Own,Employed,True,1,endometriosis,1
+Less than High School,female,1,Own,Employed,True,1,heart disease,1
+Less than High School,female,1,Own,Employed,True,1+,breast cancer,1
+Less than High School,female,1,Own,Employed,True,1+,diabetes,1
+Less than High School,female,1,Own,Employed,True,1+,gastritis,3
+Less than High School,female,1,Own,Employed,True,1+,heart disease,2
+Less than High School,female,1,Own,Employed,True,1+,hypertension,2
+Less than High School,female,1,Own,Employed,True,1+,kidney disease,1
+Less than High School,female,1,Own,Employed,True,1+,skin cancer,1
+Less than High School,female,1,Own,Retired,True,0,Alzheimer's disease,1
+Less than High School,female,1,Own,Retired,True,0,HIV/AIDS,1
+Less than High School,female,1,Own,Retired,True,0,breast cancer,1
+Less than High School,female,1,Own,Retired,True,0,endometriosis,1
+Less than High School,female,1,Own,Retired,True,0,heart disease,2
+Less than High School,female,1,Own,Retired,True,0,multiple sclerosis,2
+Less than High School,female,1,Own,Retired,True,0,skin cancer,1
+Less than High School,female,2,Own,Employed,True,1,endometriosis,1
+Less than High School,female,2,Own,Employed,True,1,gastritis,2
+Less than High School,female,2,Own,Employed,True,1,hypertension,1
+Less than High School,female,2,Own,Employed,True,1+,gastritis,2
+Less than High School,female,2,Own,Employed,True,1+,heart disease,2
+Less than High School,female,2,Own,Retired,True,0,HIV/AIDS,1
+Less than High School,female,2,Own,Retired,True,0,diabetes,2
+Less than High School,female,2,Own,Retired,True,0,endometriosis,2
+Less than High School,female,2,Own,Retired,True,0,heart disease,1
+Less than High School,female,2,Own,Retired,True,0,kidney disease,1
+Less than High School,female,2,Own,Retired,True,0,schizophrenia,1
+Less than High School,male,0,Own,Employed,True,1,endometriosis,1
+Less than High School,male,0,Own,Employed,True,1,hypertension,1
+Less than High School,male,0,Own,Employed,True,1+,gastritis,1
+Less than High School,male,0,Own,Employed,True,1+,hypertension,1
+Less than High School,male,0,Own,Retired,True,0,Alzheimer's disease,1
+Less than High School,male,0,Own,Retired,True,0,diabetes,1
+Less than High School,male,0,Own,Retired,True,0,kidney disease,1
+Less than High School,male,0,Own,Retired,True,0,prostate cancer,1
+Less than High School,male,0,Own,Unemployed,True,0,endometriosis,1
+Less than High School,male,0,Own,Unemployed,True,0,heart disease,1
+Less than High School,male,0,Own,Unemployed,True,0,skin cancer,1
+Less than High School,male,0,Rent,Employed,True,0,diabetes,1
+Less than High School,male,0,Rent,Employed,True,0,heart disease,1
+Less than High School,male,0,Rent,Employed,True,1,diabetes,1
+Less than High School,male,0,Rent,Employed,True,1,gastritis,1
+Less than High School,male,0,Rent,Employed,True,1+,Alzheimer's disease,1
+Less than High School,male,0,Rent,Employed,True,1+,HIV/AIDS,1
+Less than High School,male,0,Rent,Employed,True,1+,heart disease,2
+Less than High School,male,0,Rent,Employed,True,1+,hypertension,1
+Less than High School,male,0,Rent,Employed,True,1+,prostate cancer,2
+Less than High School,male,0,Rent,Employed,True,1+,schizophrenia,1
+Less than High School,male,0,Rent,Employed,True,1+,skin cancer,1
+Less than High School,male,0,Rent,Retired,True,0,Alzheimer's disease,2
+Less than High School,male,0,Rent,Retired,True,0,diabetes,2
+Less than High School,male,0,Rent,Retired,True,0,endometriosis,3
+Less than High School,male,0,Rent,Retired,True,0,heart disease,4
+Less than High School,male,0,Rent,Retired,True,0,kidney disease,1
+Less than High School,male,0,Rent,Retired,True,0,multiple sclerosis,2
+Less than High School,male,0,Rent,Retired,True,0,skin cancer,1
+Less than High School,male,0,Rent,Student,False,1,Alzheimer's disease,1
+Less than High School,male,0,Rent,Student,False,1,heart disease,1
+Less than High School,male,0,Rent,Student,False,1,kidney disease,1
+Less than High School,male,0,Rent,Student,False,1,multiple sclerosis,1
+Less than High School,male,0,Rent,Student,False,1,schizophrenia,1
+Less than High School,male,0,Rent,Student,False,1,skin cancer,1
+Less than High School,male,0,Rent,Student,False,1+,HIV/AIDS,1
+Less than High School,male,0,Rent,Student,False,1+,kidney disease,1
+Less than High School,male,0,Rent,Student,True,1,diabetes,1
+Less than High School,male,0,Rent,Student,True,1,schizophrenia,1
+Less than High School,male,0,Rent,Unemployed,True,0,HIV/AIDS,2
+Less than High School,male,0,Rent,Unemployed,True,0,diabetes,1
+Less than High School,male,0,Rent,Unemployed,True,0,schizophrenia,1
+Less than High School,male,1,Own,Employed,True,0,diabetes,1
+Less than High School,male,1,Own,Employed,True,0,kidney disease,2
+Less than High School,male,1,Own,Employed,True,0,schizophrenia,1
+Less than High School,male,1,Own,Employed,True,1,gastritis,1
+Less than High School,male,1,Own,Employed,True,1,heart disease,1
+Less than High School,male,1,Own,Employed,True,1,hypertension,1
+Less than High School,male,1,Own,Employed,True,1,kidney disease,1
+Less than High School,male,1,Own,Employed,True,1,prostate cancer,1
+Less than High School,male,1,Own,Employed,True,1+,Alzheimer's disease,1
+Less than High School,male,1,Own,Employed,True,1+,HIV/AIDS,2
+Less than High School,male,1,Own,Employed,True,1+,diabetes,1
+Less than High School,male,1,Own,Employed,True,1+,gastritis,2
+Less than High School,male,1,Own,Employed,True,1+,heart disease,1
+Less than High School,male,1,Own,Employed,True,1+,kidney disease,1
+Less than High School,male,1,Own,Employed,True,1+,prostate cancer,1
+Less than High School,male,1,Own,Employed,True,1+,schizophrenia,1
+Less than High School,male,1,Own,Employed,True,1+,skin cancer,1
+Less than High School,male,1,Own,Retired,True,0,Alzheimer's disease,3
+Less than High School,male,1,Own,Retired,True,0,HIV/AIDS,1
+Less than High School,male,1,Own,Retired,True,0,diabetes,1
+Less than High School,male,1,Own,Retired,True,0,endometriosis,2
+Less than High School,male,1,Own,Retired,True,0,gastritis,1
+Less than High School,male,1,Own,Retired,True,0,heart disease,2
+Less than High School,male,1,Own,Retired,True,0,multiple sclerosis,2
+Less than High School,male,1,Own,Retired,True,0,prostate cancer,1
+Less than High School,male,1,Rent,Unemployed,True,0,diabetes,1
+Less than High School,male,1,Rent,Unemployed,True,0,endometriosis,1
+Less than High School,male,2,Own,Employed,True,0,gastritis,1
+Less than High School,male,2,Own,Employed,True,0,skin cancer,1
+Less than High School,male,2,Own,Employed,True,1,gastritis,1
+Less than High School,male,2,Own,Employed,True,1,hypertension,1
+Less than High School,male,2,Own,Employed,True,1,kidney disease,1
+Less than High School,male,2,Own,Employed,True,1,prostate cancer,1
+Less than High School,male,2,Own,Employed,True,1+,heart disease,1
+Less than High School,male,2,Own,Employed,True,1+,hypertension,1
+Less than High School,male,2,Own,Employed,True,1+,kidney disease,1
+Less than High School,male,2,Own,Employed,True,1+,schizophrenia,1
+Less than High School,male,2,Own,Employed,True,1+,skin cancer,2
+Less than High School,male,2,Own,Retired,True,0,Alzheimer's disease,2
+Less than High School,male,2,Own,Retired,True,0,endometriosis,2
+Less than High School,male,2,Own,Retired,True,0,kidney disease,1
+Less than High School,male,2,Own,Retired,True,0,multiple sclerosis,1
+Masters and more,female,1,Own,Employed,False,1+,Alzheimer's disease,2
+Masters and more,female,1,Own,Employed,False,1+,diabetes,1
+Masters and more,female,1,Own,Employed,False,1+,gastritis,2
+Masters and more,female,1,Own,Employed,False,1+,heart disease,1
+Masters and more,female,1,Own,Employed,False,1+,kidney disease,1
+Masters and more,female,1,Own,Employed,False,1+,schizophrenia,1
+Masters and more,female,1,Own,Employed,True,0,gastritis,1
+Masters and more,female,1,Own,Employed,True,0,hypertension,1
+Masters and more,female,1,Own,Employed,True,1,Alzheimer's disease,1
+Masters and more,female,1,Own,Employed,True,1,endometriosis,1
+Masters and more,female,1,Own,Employed,True,1,gastritis,3
+Masters and more,female,1,Own,Employed,True,1,heart disease,1
+Masters and more,female,1,Own,Employed,True,1,multiple sclerosis,3
+Masters and more,female,1,Own,Employed,True,1,schizophrenia,1
+Masters and more,female,1,Own,Employed,True,1,skin cancer,1
+Masters and more,female,1,Own,Employed,True,1+,HIV/AIDS,2
+Masters and more,female,1,Own,Employed,True,1+,breast cancer,3
+Masters and more,female,1,Own,Employed,True,1+,endometriosis,4
+Masters and more,female,1,Own,Employed,True,1+,gastritis,2
+Masters and more,female,1,Own,Employed,True,1+,heart disease,4
+Masters and more,female,1,Own,Employed,True,1+,hypertension,4
+Masters and more,female,1,Own,Employed,True,1+,kidney disease,2
+Masters and more,female,1,Own,Employed,True,1+,schizophrenia,3
+Masters and more,female,1,Own,Employed,True,1+,skin cancer,2
+Masters and more,female,1,Own,Retired,False,0,breast cancer,2
+Masters and more,female,1,Own,Retired,False,0,diabetes,1
+Masters and more,female,1,Own,Retired,False,0,kidney disease,1
+Masters and more,female,1,Own,Retired,True,0,Alzheimer's disease,3
+Masters and more,female,1,Own,Retired,True,0,HIV/AIDS,2
+Masters and more,female,1,Own,Retired,True,0,breast cancer,6
+Masters and more,female,1,Own,Retired,True,0,diabetes,4
+Masters and more,female,1,Own,Retired,True,0,endometriosis,1
+Masters and more,female,1,Own,Retired,True,0,gastritis,2
+Masters and more,female,1,Own,Retired,True,0,heart disease,2
+Masters and more,female,1,Own,Retired,True,0,hypertension,4
+Masters and more,female,1,Own,Retired,True,0,kidney disease,2
+Masters and more,female,1,Own,Retired,True,0,multiple sclerosis,1
+Masters and more,female,1,Own,Retired,True,0,skin cancer,3
+Masters and more,female,1,Rent,Retired,True,0,multiple sclerosis,2
+Masters and more,female,2,Own,Employed,False,1,Alzheimer's disease,1
+Masters and more,female,2,Own,Employed,False,1,heart disease,2
+Masters and more,female,2,Own,Employed,False,1+,gastritis,2
+Masters and more,female,2,Own,Employed,False,1+,schizophrenia,1
+Masters and more,female,2,Own,Employed,True,0,breast cancer,1
+Masters and more,female,2,Own,Employed,True,0,endometriosis,1
+Masters and more,female,2,Own,Employed,True,0,gastritis,1
+Masters and more,female,2,Own,Employed,True,0,hypertension,1
+Masters and more,female,2,Own,Employed,True,1,HIV/AIDS,1
+Masters and more,female,2,Own,Employed,True,1,breast cancer,1
+Masters and more,female,2,Own,Employed,True,1,endometriosis,1
+Masters and more,female,2,Own,Employed,True,1,gastritis,1
+Masters and more,female,2,Own,Employed,True,1,kidney disease,1
+Masters and more,female,2,Own,Employed,True,1,multiple sclerosis,2
+Masters and more,female,2,Own,Employed,True,1+,Alzheimer's disease,3
+Masters and more,female,2,Own,Employed,True,1+,HIV/AIDS,1
+Masters and more,female,2,Own,Employed,True,1+,gastritis,9
+Masters and more,female,2,Own,Employed,True,1+,heart disease,6
+Masters and more,female,2,Own,Employed,True,1+,hypertension,4
+Masters and more,female,2,Own,Employed,True,1+,multiple sclerosis,1
+Masters and more,female,2,Own,Employed,True,1+,skin cancer,2
+Masters and more,female,2,Own,Retired,False,0,gastritis,1
+Masters and more,female,2,Own,Retired,False,0,multiple sclerosis,1
+Masters and more,female,2,Own,Retired,True,0,Alzheimer's disease,3
+Masters and more,female,2,Own,Retired,True,0,HIV/AIDS,3
+Masters and more,female,2,Own,Retired,True,0,breast cancer,3
+Masters and more,female,2,Own,Retired,True,0,diabetes,1
+Masters and more,female,2,Own,Retired,True,0,endometriosis,2
+Masters and more,female,2,Own,Retired,True,0,gastritis,1
+Masters and more,female,2,Own,Retired,True,0,heart disease,2
+Masters and more,female,2,Own,Retired,True,0,kidney disease,1
+Masters and more,female,2,Own,Retired,True,0,multiple sclerosis,1
+Masters and more,female,2,Own,Retired,True,0,schizophrenia,1
+Masters and more,female,2,Rent,Employed,True,1+,diabetes,1
+Masters and more,female,2,Rent,Employed,True,1+,kidney disease,1
+Masters and more,female,3,Own,Employed,True,0,diabetes,1
+Masters and more,female,3,Own,Employed,True,0,gastritis,1
+Masters and more,female,3,Own,Employed,True,1+,diabetes,1
+Masters and more,female,3,Own,Employed,True,1+,gastritis,2
+Masters and more,female,3,Own,Employed,True,1+,hypertension,1
+Masters and more,female,3,Own,Employed,True,1+,schizophrenia,1
+Masters and more,female,3,Own,Retired,False,0,diabetes,1
+Masters and more,female,3,Own,Retired,False,0,endometriosis,1
+Masters and more,female,3,Own,Retired,True,0,endometriosis,2
+Masters and more,female,3,Rent,Retired,True,0,endometriosis,1
+Masters and more,female,3,Rent,Retired,True,0,schizophrenia,1
+Masters and more,male,1,Own,Employed,False,1,Alzheimer's disease,1
+Masters and more,male,1,Own,Employed,False,1,gastritis,1
+Masters and more,male,1,Own,Employed,False,1+,Alzheimer's disease,2
+Masters and more,male,1,Own,Employed,False,1+,HIV/AIDS,1
+Masters and more,male,1,Own,Employed,False,1+,gastritis,1
+Masters and more,male,1,Own,Employed,False,1+,heart disease,1
+Masters and more,male,1,Own,Employed,False,1+,hypertension,1
+Masters and more,male,1,Own,Employed,True,0,HIV/AIDS,1
+Masters and more,male,1,Own,Employed,True,0,gastritis,1
+Masters and more,male,1,Own,Employed,True,0,kidney disease,1
+Masters and more,male,1,Own,Employed,True,0,prostate cancer,1
+Masters and more,male,1,Own,Employed,True,0,skin cancer,1
+Masters and more,male,1,Own,Employed,True,1,HIV/AIDS,4
+Masters and more,male,1,Own,Employed,True,1,gastritis,2
+Masters and more,male,1,Own,Employed,True,1,heart disease,2
+Masters and more,male,1,Own,Employed,True,1,hypertension,1
+Masters and more,male,1,Own,Employed,True,1,multiple sclerosis,1
+Masters and more,male,1,Own,Employed,True,1,prostate cancer,4
+Masters and more,male,1,Own,Employed,True,1,skin cancer,2
+Masters and more,male,1,Own,Employed,True,1+,Alzheimer's disease,2
+Masters and more,male,1,Own,Employed,True,1+,HIV/AIDS,5
+Masters and more,male,1,Own,Employed,True,1+,diabetes,1
+Masters and more,male,1,Own,Employed,True,1+,endometriosis,1
+Masters and more,male,1,Own,Employed,True,1+,gastritis,5
+Masters and more,male,1,Own,Employed,True,1+,heart disease,8
+Masters and more,male,1,Own,Employed,True,1+,hypertension,4
+Masters and more,male,1,Own,Employed,True,1+,kidney disease,4
+Masters and more,male,1,Own,Employed,True,1+,prostate cancer,1
+Masters and more,male,1,Own,Employed,True,1+,schizophrenia,2
+Masters and more,male,1,Own,Employed,True,1+,skin cancer,4
+Masters and more,male,1,Own,Retired,False,0,Alzheimer's disease,1
+Masters and more,male,1,Own,Retired,False,0,heart disease,1
+Masters and more,male,1,Own,Retired,True,0,Alzheimer's disease,3
+Masters and more,male,1,Own,Retired,True,0,HIV/AIDS,5
+Masters and more,male,1,Own,Retired,True,0,diabetes,4
+Masters and more,male,1,Own,Retired,True,0,endometriosis,1
+Masters and more,male,1,Own,Retired,True,0,gastritis,3
+Masters and more,male,1,Own,Retired,True,0,heart disease,1
+Masters and more,male,1,Own,Retired,True,0,hypertension,3
+Masters and more,male,1,Own,Retired,True,0,multiple sclerosis,1
+Masters and more,male,1,Own,Retired,True,0,prostate cancer,5
+Masters and more,male,1,Own,Retired,True,0,schizophrenia,3
+Masters and more,male,1,Rent,Employed,True,1+,gastritis,2
+Masters and more,male,1,Rent,Employed,True,1+,hypertension,2
+Masters and more,male,1,Rent,Employed,True,1+,kidney disease,1
+Masters and more,male,2,Own,Employed,True,1,HIV/AIDS,4
+Masters and more,male,2,Own,Employed,True,1,endometriosis,1
+Masters and more,male,2,Own,Employed,True,1,gastritis,3
+Masters and more,male,2,Own,Employed,True,1,hypertension,1
+Masters and more,male,2,Own,Employed,True,1,kidney disease,1
+Masters and more,male,2,Own,Employed,True,1,multiple sclerosis,1
+Masters and more,male,2,Own,Employed,True,1,skin cancer,1
+Masters and more,male,2,Own,Employed,True,1+,Alzheimer's disease,3
+Masters and more,male,2,Own,Employed,True,1+,HIV/AIDS,1
+Masters and more,male,2,Own,Employed,True,1+,diabetes,1
+Masters and more,male,2,Own,Employed,True,1+,gastritis,8
+Masters and more,male,2,Own,Employed,True,1+,heart disease,5
+Masters and more,male,2,Own,Employed,True,1+,hypertension,2
+Masters and more,male,2,Own,Employed,True,1+,kidney disease,3
+Masters and more,male,2,Own,Employed,True,1+,multiple sclerosis,1
+Masters and more,male,2,Own,Employed,True,1+,prostate cancer,1
+Masters and more,male,2,Own,Employed,True,1+,schizophrenia,1
+Masters and more,male,2,Own,Employed,True,1+,skin cancer,1
+Masters and more,male,2,Own,Retired,True,0,Alzheimer's disease,2
+Masters and more,male,2,Own,Retired,True,0,HIV/AIDS,1
+Masters and more,male,2,Own,Retired,True,0,diabetes,3
+Masters and more,male,2,Own,Retired,True,0,heart disease,4
+Masters and more,male,2,Own,Retired,True,0,hypertension,1
+Masters and more,male,2,Own,Retired,True,0,kidney disease,3
+Masters and more,male,2,Own,Retired,True,0,multiple sclerosis,1
+Masters and more,male,2,Own,Retired,True,0,prostate cancer,3
+Masters and more,male,2,Own,Retired,True,0,skin cancer,1
+Masters and more,male,3,Own,Employed,False,1+,gastritis,1
+Masters and more,male,3,Own,Employed,False,1+,kidney disease,1
+Masters and more,male,3,Own,Employed,True,1+,heart disease,2
+Masters and more,male,3,Own,Employed,True,1+,hypertension,1
+Masters and more,male,3,Own,Employed,True,1+,skin cancer,1
+Masters and more,male,3,Own,Retired,True,0,Alzheimer's disease,2
+Masters and more,male,3,Own,Retired,True,0,diabetes,2
+Masters and more,male,3,Own,Retired,True,0,heart disease,1
+Masters and more,male,3,Own,Retired,True,0,kidney disease,1
+Masters and more,male,3,Own,Retired,True,0,prostate cancer,1
