@@ -59,9 +59,10 @@ def load_in_cache(root, batch_size, img_size, prefix="*/*"):
     for f in ds.take(5):
         print(f)
 
+    ds = ds.map(_load_img, num_parallel_calls=-1)
+    if img_size[0] < 128:
+        ds = ds.cache()
     ds = (ds
-          .map(_load_img, num_parallel_calls=-1)
-          .cache()
           .batch(batch_size)
           .prefetch(-1)
           )

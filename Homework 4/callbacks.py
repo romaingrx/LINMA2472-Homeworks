@@ -1,3 +1,4 @@
+import os
 from typing import Dict
 
 import numpy as np
@@ -63,6 +64,7 @@ class SaveSampleGridCallback(ExecuteEveryNExamplesCallback):
 class GenerateSampleGridCallback(ExecuteEveryNExamplesCallback):
     def __init__(self, log_dir: str, show_blurred_samples=False, every_n_examples=1000, also_save_files=True):
         self.log_dir = log_dir
+        if not os.path.exists(log_dir): os.makedirs(log_dir)
         self.show_blurred_samples = show_blurred_samples
         super().__init__(n=every_n_examples)
 
@@ -117,3 +119,18 @@ class LogMetricsCallback(ExecuteEveryNExamplesCallback):
                     tf.summary.scalar(f"{prefix}{name}", value, step=self.num_invocations)
             if flush:
                 self.model.summary_writer.flush()
+
+
+class FreezeGenDisc(tf.keras.callbacks.Callback):
+    def __init__(self, n):
+        super(FreezeGenDisc, self).__init__()
+        self.n = n
+
+    def on_train_begin(self, logs):
+        self.model.generator.freeze()
+        self.model.discriminator.freeze()
+
+    def on_epoch_begin(self, epoch, logs=None):
+        if epoch == self.n:
+            self.model.generator.unfreeze()
+            self.model.discriminator.unfreeze()
