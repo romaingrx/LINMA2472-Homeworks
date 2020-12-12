@@ -1,4 +1,6 @@
 import math
+from copy import copy as deepcopy
+from collections import deque
 
 import tensorflow as tf
 from tensorflow.keras import layers
@@ -211,11 +213,26 @@ class Discriminator(Sequential):
         ]
         return Sequential(block_layers, name=name)
 
+    def _get_weights(self, layers=None):
+        layers = layers or self.layers
+        ret_dict = {}
+        for l in layers:
+            ret_dict[l.name] = self._get_weights(l.layers) if hasattr(l, "layers") else l.get_weights()
+        return ret_dict
+
+    def _set_weights(self, weights, layers=None):
+        layers = layers or self.layers
+        for l in layers:
+            if hasattr(l, "layers"):
+                self._set_weights(weights[l.name], layers=l.layers)
+            else:
+                l.set_weights(weights[l.name])
+        return self
 
 
 class GAN(tf.keras.Model):
 
-    def __init__(self, generator, discriminator, latent_dim, log_dir, freeze_for_epoch=None):
+    def __init__(self, generator, discriminator, latent_dim, log_dir):
         super(GAN, self).__init__()
         self.generator = generator
         self.discriminator = discriminator
@@ -237,26 +254,21 @@ class GAN(tf.keras.Model):
         self.g_optimizer = g_optimizer
         self.loss_fn = loss_fn
 
-    def train_step(self, real_images):
-        tf.summary.experimental.set_step(self.n_img)
 
-        if isinstance(real_images, tuple):
-            real_images = real_images[0]
-
-        # Sample random points in the latent space
+    def D_step(self, real_images, Z=None):
         batch_size = tf.shape(real_images)[0]
-        self.batch_size = batch_size
-        random_latent_vectors = tf.random.normal(shape=(batch_size, self.latent_dim))
+        if Z is None:
+            Z = tf.random.normal((batch_size, self.latent_dim))
 
         # Decode them to fake images
-        generated_images = self.generator(random_latent_vectors)
+        generated_images = self.generator(Z)
 
         # Combine them with real images
         combined_images = tf.concat([generated_images, real_images], axis=0)
 
         # Assemble labels discriminating real from fake images
         labels = tf.concat(
-            [.9 * tf.ones((batch_size, 1)), tf.zeros((batch_size, 1))], axis=0
+            [tf.zeros((batch_size, 1)), .9*tf.ones((batch_size, 1))], axis=0
         )
         # Add random noise to the labels - important trick!
         #labels += 0.05 * tf.random.uniform(tf.shape(labels))
@@ -270,19 +282,37 @@ class GAN(tf.keras.Model):
             zip(grads, self.discriminator.trainable_weights)
         )
 
-        # Sample random points in the latent space
-        random_latent_vectors = tf.random.normal(shape=(batch_size, self.latent_dim))
+        return d_loss
 
+    def G_step(self, Z, batch_size):
         # Assemble labels that say "all real images"
-        misleading_labels = tf.zeros((batch_size, 1))
+        misleading_labels = tf.ones((batch_size, 1))
 
         # Train the generator (note that we should *not* update the weights
         # of the discriminator)!
         with tf.GradientTape() as tape:
-            predictions = self.discriminator(self.generator(random_latent_vectors))
+            predictions = self.discriminator(self.generator(Z))
             g_loss = self.loss_fn(misleading_labels, predictions)
         grads = tape.gradient(g_loss, self.generator.trainable_weights)
         self.g_optimizer.apply_gradients(zip(grads, self.generator.trainable_weights))
+
+        return g_loss
+
+    def train_step(self, real_images):
+        tf.summary.experimental.set_step(self.n_img)
+
+        if isinstance(real_images, tuple):
+            real_images = real_images[0]
+
+        batch_size = tf.shape(real_images)[0]
+
+        d_loss = self.D_step(real_images)
+
+        # Sample random points in the latent space
+        Z = tf.random.normal(shape=(batch_size, self.latent_dim))
+        
+        g_loss = self.G_step(Z, batch_size)
+
         return {"d_loss": d_loss, "g_loss": g_loss, "size" : batch_size}
 
     def latents_batch(self):
@@ -294,9 +324,9 @@ class GAN(tf.keras.Model):
             latents = self.latents_batch()
         return self.generator(latents, training=training)
 
-    def double_size(self):
-        self.generator = self.generator.double_output_size()
-        self.discriminator = self.discriminator.double_input_size()
+    #def double_size(self):
+    #    self.generator = self.generator.double_output_size()
+    #    self.discriminator = self.discriminator.double_input_size()
 
     def summary(self):
         #print("> Generator")
@@ -305,3 +335,40 @@ class GAN(tf.keras.Model):
         self.discriminator.summary()
 
 
+
+class UnrolledDCGAN(GAN):
+    def __init__(self, generator, discriminator, latent_dim, n_unrolled, log_dir):
+        #assert isinstance(tf.distribute.get_strategy(), tf.distribute.OneDeviceStrategy), f"Does not work with multi-Devices strategies :: current strategy {tf.distribute.get_strategy()}"
+        super(UnrolledDCGAN, self).__init__(generator, discriminator, latent_dim, log_dir)
+        self.n_unrolled = n_unrolled
+
+    def G_step(self, real_image, Z, batch_size):
+
+        if self.n_unrolled > 0:
+            D_backup = deepcopy(self.discriminator)
+            for _ in range(self.n_unrolled):
+                self.D_step(real_image, Z)
+        
+        g_loss = super().G_step(Z, batch_size)
+
+        if self.n_unrolled > 0:
+            self.discriminator = D_backup
+
+        return g_loss
+
+    def train_step(self, real_images):
+        tf.summary.experimental.set_step(self.n_img)
+
+        if isinstance(real_images, tuple):
+            real_images = real_images[0]
+
+        batch_size = tf.shape(real_images)[0]
+
+        d_loss = self.D_step(real_images)
+
+        # Sample random points in the latent space
+        Z = tf.random.normal(shape=(batch_size, self.latent_dim))
+
+        g_loss = self.G_step(real_images, Z, batch_size)
+
+        return {"d_loss": d_loss, "g_loss": g_loss, "size" : batch_size}

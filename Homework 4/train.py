@@ -7,7 +7,7 @@ import tensorflow as tf
 import callbacks
 from utils import get_best_strategy, AttrDict
 from data import load_data, load_in_cache
-from models import Generator, Discriminator, GAN
+from models import Generator, Discriminator, UnrolledDCGAN
 
 root_dataset = join(os.curdir, "datasets", "wout")
 prefix = "*"
@@ -20,10 +20,11 @@ FREEZE_FOR_EPOCHS = 10
 CHANNELS = 3
 LATENT_DIM = 100
 BATCH_SIZE = 128
+N_UNROLLED = 0
 SAVE_INTERVAL = 100_000
 
 BASE_LOG_DIR = join(os.curdir, "runs")
-LOG_DIR = join(BASE_LOG_DIR, f"change_size")
+LOG_DIR = join(BASE_LOG_DIR, f"test_new_step")
 
 logger = logging.getLogger("DCGAN")
 logger.setLevel(logging.DEBUG)
@@ -31,7 +32,8 @@ logger.setLevel(logging.DEBUG)
 gen_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)
 disc_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)
 
-strategy = get_best_strategy()
+#strategy = get_best_strategy()
+strategy = tf.distribute.get_strategy()
 global_batch_size = BATCH_SIZE * strategy.num_replicas_in_sync # To adapt with strategy
 
 with strategy.scope():
@@ -61,7 +63,7 @@ for epochs, size in zip(INTER_EPOCHS, INTER_SIZE):
             generator = Generator(LATENT_DIM, size, CHANNELS)
             discriminator = Discriminator(size, CHANNELS)
             logger.info(f"--- Compiled the gan for the first time with size of generated images to ({size:d}, {size:d}, 3)")
-        gan = GAN(generator, discriminator, LATENT_DIM, inter_logdir)
+        gan = UnrolledDCGAN(generator, discriminator, LATENT_DIM, N_UNROLLED,inter_logdir)
     gan.compile(disc_optimizer, gen_optimizer, loss)
 
     train_data = load_in_cache(root_dataset, global_batch_size, img_size, prefix=prefix)
