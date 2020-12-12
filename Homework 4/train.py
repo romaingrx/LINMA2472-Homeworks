@@ -1,94 +1,85 @@
 import os
-from tqdm import tqdm
-from time import time
 from os.path import join
 
 import tensorflow as tf
-import tensorboard as tb
 
-from data import load_data
-from utils import discriminator_loss, generator_loss, save_imgs
-from model import Discriminator, Generator
+import callbacks
+from data import load_data, load_in_cache
+from model import Generator, Discriminator, GAN
 
-#from GAN import Discriminator, Generator
+N_GPUS=-1; GPU_AVAILABLE=False
+
+devices = tf.config.list_physical_devices('GPU')
+if devices:
+    GPU_AVAILABLE=True
+    N_GPUS=len(devices)
+    for device in devices:
+        tf.config.experimental.set_memory_growth(device, True)
+
+if not GPU_AVAILABLE:
+    print("Strategy : One device on CPU (slow)")
+    #strategy = tf.distribute.OneDeviceStrategy("CPU")
+    strategy = tf.distribute.get_strategy()
+elif N_GPUS==1:
+    print("Strategy : One device on GPU")
+    strategy = tf.distribute.OneDeviceStrategy("GPU")
+else:
+    print(f"Strategy : Mirrored strategy on {N_GPUS} GPU's ")
+    strategy = tf.distribute.MirroredStrategy()
 
 
-def train():
+root_dataset = join(os.curdir, "wout")
+prefix = "*"
+#root_images = join(os.curdir, "all_bitmoji_64")
+img_size = (128, 128)
 
+latent_dim = 100
+epochs = 5000
+batch_size = 128
+save_interval = 100_000
 
+base_log_dir = join(os.curdir, "runs")
+log_dir = join(base_log_dir, f"run_with_background")
 
-    root_dataset = join(os.curdir, "BitmojiDataset", "images")
-    root_images = join(os.curdir, "cached_images")
-    img_size = (28, 28)
-    channels = 3
+global_batch_size = batch_size * strategy.num_replicas_in_sync # To adapt with strategy
 
-    # settting hyperparameter
-    latent_dim = 100
-    epochs = 800
-    batch_size = 256
-    buffer_size = 6000
-    save_interval = 5
+train_data = load_in_cache(root_dataset, global_batch_size, img_size, prefix=prefix)
 
+gen_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)
+disc_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)
 
-    generator = Generator(channels=channels)
+with strategy.scope():
+    loss_obj = tf.keras.losses.BinaryCrossentropy(from_logits=True, reduction=tf.keras.losses.Reduction.NONE)
+    def loss(*args, **kwargs):
+        return tf.reduce_sum(loss_obj(*args, **kwargs)) * (1./global_batch_size)
+    generator = Generator(latent_dim)
     discriminator = Discriminator()
+    gan = GAN(generator, discriminator, latent_dim, log_dir)
+gan.compile(disc_optimizer, gen_optimizer, loss)
 
-    gen_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)
-    disc_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)
 
-    #data, info = tfds.load("mnist", with_info=True, data_dir='~/tensorflow_datasets')
-    #train_data = data['train']
-    #train_dataset = train_data.map(normalize).shuffle(buffer_size).batch(batch_size)
-    train_dataset = load_data(root_dataset, batch_size, img_size, augmentation=False, cache=True)
+checkpoint = tf.train.Checkpoint(gan=gan)
+manager = tf.train.CheckpointManager(
+    checkpoint,
+    directory=log_dir,
+    max_to_keep=5,
+    keep_checkpoint_every_n_hours=1
+)
 
-    cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=True)
 
-    if not os.path.exists(root_images):
-        os.makedirs(root_images)
+gan.summary()
 
-    @tf.function
-    def train_step(images):
-        noise = tf.random.normal([batch_size, latent_dim])
+try:
+    gan.fit(
+        train_data,
+        epochs=epochs,
+        callbacks=[
+            callbacks.GenerateSampleGridCallback(join(log_dir, "samples"), every_n_examples=save_interval),
+            callbacks.SaveModelCallback(manager, n=save_interval),
+            callbacks.LogMetricsCallback(every_n_examples=save_interval)
+        ]
+    )
+except KeyboardInterrupt:
+    manager.save()
 
-        with tf.GradientTape(persistent=True) as tape:
-            generated_images = generator(noise)
-
-            real_output = discriminator(images)
-            generated_output = discriminator(generated_images)
-
-            gen_loss = generator_loss(cross_entropy, generated_output)
-            disc_loss = discriminator_loss(cross_entropy, real_output, generated_output)
-
-        grad_gen = tape.gradient(gen_loss, generator.trainable_variables)
-        grad_disc = tape.gradient(disc_loss, discriminator.trainable_variables)
-
-        gen_optimizer.apply_gradients(zip(grad_gen, generator.trainable_variables))
-        disc_optimizer.apply_gradients(zip(grad_disc, discriminator.trainable_variables))
-
-        return gen_loss, disc_loss
-
-    seed = tf.random.normal([batch_size, latent_dim])
-
-    for epoch in range(epochs):
-        total_gen_loss = 0
-        total_disc_loss = 0
-
-        tgen = tqdm(enumerate(train_dataset), desc=f"Epoch {epoch+1}/{epochs} ")
-        for idx, images in tgen:
-            gen_loss, disc_loss = train_step(images)
-
-            total_gen_loss += gen_loss
-            total_disc_loss += disc_loss
-
-            tgen.set_postfix(
-                dict(
-                    gen_loss=total_gen_loss.numpy()/(idx+1),
-                    disc_loss=total_disc_loss.numpy()/(idx+1)
-                )
-            )
-
-        if epoch % save_interval == 0:
-            save_imgs(epoch, generator, seed, root=root_images, name="bitmoji")
-
-if __name__ == '__main__':
-    train()
+print("\nDone training.")

@@ -1,15 +1,16 @@
 import os
 from tqdm import tqdm
+from tqdm.contrib.concurrent import process_map
+from functools import partial
+from multiprocessing import Pool
 
 import cv2
 import imageio
 import numpy as np
 
+import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.data import Dataset
-
-
-
 
 def load_data(root, batch_size, img_size, augmentation=False, cache=False):
     if cache and augmentation:
@@ -45,19 +46,30 @@ def load_data(root, batch_size, img_size, augmentation=False, cache=False):
 
     return dataset
 
+def load_in_cache(root, batch_size, img_size, prefix="*/*"):
+    def _load_img(path):
+        img = tf.io.read_file(path)
+        img = tf.image.decode_png(img, channels=3)
+        img = tf.image.resize(img, img_size)
+        img = (img - 127.5) / 127.5 # tanh
+        return img
 
-def load_in_cache(root, batch_size, img_size):
-    _imgs = []
-    for _root, dirs, files in os.walk(root):
-        for fname in files:
-            if fname.split('.')[-1].lower() in ('jpg', 'png'):
-                img = imageio.imread(os.path.join(_root, fname))
-                img = cv2.resize(img, img_size, interpolation=cv2.INTER_CUBIC)
-                img = np.divide(img, 255.)
-                _imgs.append(img)
+    pattern = os.path.join(root, prefix)
+    ds = Dataset.list_files(pattern)
+    for f in ds.take(5):
+        print(f)
 
-    nd_img = np.stack(_imgs, axis=0)
-    dataset = Dataset.from_tensor_slices(nd_img).batch(batch_size).prefetch(-1)
+    ds = (ds
+          .map(_load_img, num_parallel_calls=-1)
+          .cache()
+          .batch(batch_size)
+          .prefetch(-1)
+          )
+    print("Finished loading dataset")
+    return ds
 
-    return dataset
-
+if __name__ == '__main__':
+    root_dataset = os.path.join(os.curdir, "bitmoji")
+    l = load_in_cache(root_dataset, 64, (64, 64))
+    for f in l.take(5):
+        print(f.shape)
