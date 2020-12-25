@@ -1,9 +1,3 @@
-img[src$="center"] {
-  display:block;
-  margin: 0 auto;
-}
-
-
 WGAN-GP
 ===
 
