@@ -14,6 +14,9 @@ class AttrDict(dict):
     __getattr__ = dict.__getitem__
     __setattr__ = dict.__setitem__
 
+class WassersteinLoss(tf.keras.losses.Loss):
+    def call(self, y_true, y_pred):
+        return tf.reduce_mean(y_true*y_pred, axis=-1)
 
 def discriminator_loss(loss_object, real_output, fake_output, global_batch_size=None):
     real_loss = loss_object(.9 * tf.ones_like(real_output), real_output)
@@ -67,13 +70,13 @@ def plot_to_image(figure):
     return image
 
 
-def samples_grid(samples):
+def samples_grid(samples, nrows=8, ncols=8):
     """Return a grid of the samples images as a matplotlib figure."""
     # Create a figure to contain the plot.
     figure = plt.figure()
-    for i in range(64):
+    for i in range(nrows*ncols):
         # Start next subplot.
-        plt.subplot(8, 8, i + 1)
+        plt.subplot(nrows, ncols, i + 1)
         plt.xticks([])
         plt.yticks([])
         plt.grid(False)

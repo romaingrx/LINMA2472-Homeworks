@@ -41,8 +41,10 @@ class ExecuteEveryNExamplesCallback(tf.keras.callbacks.Callback):
         raise NotImplementedError("Implement the 'function' inside your class!")
 
 class SaveSampleGridCallback(ExecuteEveryNExamplesCallback):
-    def __init__(self, log_dir: str, every_n_examples=1000):
+    def __init__(self, log_dir: str, every_n_examples=1000, nrows=5, ncols=5):
         self.log_dir = log_dir
+        self.ncols = ncols
+        self.nrows = nrows
         super().__init__(n=every_n_examples)
 
     def function(self, batch, logs):
@@ -62,8 +64,10 @@ class SaveSampleGridCallback(ExecuteEveryNExamplesCallback):
             tf.summary.image("samples_grid_real", image, step=self.num_invocations)
 
 class GenerateSampleGridCallback(ExecuteEveryNExamplesCallback):
-    def __init__(self, log_dir: str, show_blurred_samples=False, every_n_examples=1000, also_save_files=True):
+    def __init__(self, log_dir: str, show_blurred_samples=False, every_n_examples=1000, also_save_files=True, nrows=5, ncols=5):
         self.log_dir = log_dir
+        self.nrows = nrows
+        self.ncols = ncols
         if not os.path.exists(log_dir): os.makedirs(log_dir)
         self.show_blurred_samples = show_blurred_samples
         super().__init__(n=every_n_examples)
@@ -77,7 +81,7 @@ class GenerateSampleGridCallback(ExecuteEveryNExamplesCallback):
         self.make_grid()
 
     def on_train_begin(self, logs: Dict):
-        self.latents = tf.random.uniform([64, self.model.generator.input_shape[-1]])
+        self.latents = tf.random.uniform([self.nrows*self.ncols, self.model.generator.input_shape[-1]])
 
     def make_grid(self, *args):
         samples = self.model.generate_samples(self.latents, training=False)
@@ -85,7 +89,7 @@ class GenerateSampleGridCallback(ExecuteEveryNExamplesCallback):
             samples = self.model.blur(samples)
 
         samples = utils.normalize_images(samples)
-        figure = utils.samples_grid(samples)  # TODO: write figure to a file?
+        figure = utils.samples_grid(samples, nrows=self.nrows, ncols=self.ncols)  # TODO: write figure to a file?
         figure.savefig(self.log_dir + f"/samples_grid_{self.samples_seen:06}.png")
         image = utils.plot_to_image(figure)
         with self.model.summary_writer.as_default():

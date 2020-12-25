@@ -1,15 +1,7 @@
 import os
-
 import tensorflow as tf
-from tensorflow.keras import layers
 from tensorflow.keras import backend as K
-
-from data import load_raw_data
-import utils
-
-if tf.config.list_physical_devices('GPU'):
-    for device in tf.config.list_physical_devices("GPU"):
-        tf.config.experimental.set_memory_growth(device, enable=True)
+from tensorflow.keras import layers
 
 class ClipConstraint(tf.keras.constraints.Constraint):
     # set clip value when initialized
@@ -23,31 +15,6 @@ class ClipConstraint(tf.keras.constraints.Constraint):
     # get the config
     def get_config(self):
         return {'clip_value': self.clip_value}
-
-class SaveGrid(tf.keras.callbacks.Callback):
-    def __init__(self, root, every_epochs, ncols=5, nrows=5):
-        super(SaveGrid, self).__init__()
-        self.every_epochs = every_epochs
-        self.ncols = ncols
-        self.nrows = nrows
-        self.writer = tf.summary.create_file_writer(root)
-        self.log_dir = os.path.join(root, "images")
-        os.makedirs(self.log_dir, exist_ok=True)
-        self.z = None
-
-    def on_epoch_end(self, epoch, logs=None):
-        if epoch % self.every_epochs != 0:
-            return
-        if self.z is None:
-            self.z = tf.random.normal((self.ncols*self.nrows, self.model.latent_dim))
-
-        generated_images = .5 * (self.model.g(self.z) + 1)
-        figure = utils.samples_grid(generated_images, nrows=self.nrows, ncols=self.ncols)
-        figure.savefig(self.log_dir + f"/samples_grid_{epoch}.png")
-        image = utils.plot_to_image(figure)
-        with self.writer.as_default():
-            tf.summary.image(f"Fake samples", image, step=epoch)
-
 
 
 class Generator(tf.keras.models.Model):
@@ -65,30 +32,22 @@ class Generator(tf.keras.models.Model):
             layers.LeakyReLU(alpha),
             layers.Reshape((w, h, f)),
 
-            layers.Conv2DTranspose(f, (5, 5), strides=(2, 2), padding='same', use_bias=False),
-            layers.BatchNormalization(),
-            layers.LeakyReLU(alpha),
-
-            layers.Conv2DTranspose(128, (4, 4), strides=(2, 2), padding='same', use_bias=False),
+            layers.Conv2DTranspose(128, (5, 5), strides=(2, 2), padding='same', use_bias=False),
             layers.BatchNormalization(),
             layers.LeakyReLU(alpha),
 
             layers.Conv2DTranspose(64, (4, 4), strides=(2, 2), padding='same', use_bias=False),
             layers.BatchNormalization(),
             layers.LeakyReLU(alpha),
-            
+
             layers.Conv2DTranspose(32, (4, 4), strides=(2, 2), padding='same', use_bias=False),
             layers.BatchNormalization(),
             layers.LeakyReLU(alpha),
-
-            #layers.Conv2DTranspose(16, (4, 4), strides=(2, 2), padding='same', use_bias=False),
-            #layers.BatchNormalization(),
-            #layers.LeakyReLU(alpha),
-
-            #layers.Conv2D(3, (4, 4), 2, padding='same', use_bias=False),
-            #layers.BatchNormalization(),
-            #layers.LeakyReLU(alpha),
-
+            
+            layers.Conv2DTranspose(16, (4, 4), strides=(2, 2), padding='same', use_bias=False),
+            layers.BatchNormalization(),
+            layers.LeakyReLU(alpha),
+            
             layers.Conv2D(3, (4, 4), 1, padding='same', use_bias=False)
         ])
 
@@ -105,22 +64,22 @@ class Discriminator(tf.keras.models.Model):
         const = ClipConstraint(.01)
         self.network = tf.keras.models.Sequential([
 
-            layers.Conv2D(128, (5, 5), strides=2, padding='same'),
+            layers.Conv2D(128, (5, 5), strides=2, padding='same', kernel_constraint=const),
             layers.LeakyReLU(alpha),
             layers.Dropout(rate),
 
-            layers.Conv2D(256, (5, 5), strides=2, padding='same'),
+            layers.Conv2D(256, (5, 5), strides=2, padding='same', kernel_constraint=const),
             layers.LeakyReLU(alpha),
             layers.Dropout(rate),
             
-            layers.Conv2D(512, (5, 5), strides=2, padding='same'),
+            layers.Conv2D(512, (5, 5), strides=2, padding='same', kernel_constraint=const),
             layers.LeakyReLU(alpha),
             layers.Dropout(rate),
 
             layers.Flatten(),
             #layers.Dropout(rate),
 
-            #layers.Dense(100),
+            #layers.Dense(100, kernel_constraint=const),
             #layers.Dropout(rate),
 
             layers.Dense(1)
@@ -187,71 +146,32 @@ class WGAN(tf.keras.Model):
         batch_size = real_images.shape[0]
 
         dloss = tf.constant(.0)
-        #for _ in range(self.critic):
-        z = tf.random.normal((batch_size, self.latent_dim))
-        epsilon = tf.random.normal((batch_size, 1, 1, 1), mean=0, stddev=1)
-        _dloss = self.discriminator_step(real_images, z, epsilon, 10.)
-        dloss += _dloss
+        for _ in range(self.critic):
+            z = tf.random.normal((batch_size, self.latent_dim))
+            epsilon = tf.random.normal((batch_size, 1, 1, 1))
+            _dloss = self.discriminator_step(real_images, z, epsilon, 10.)
+            dloss += _dloss
 
-        z = tf.random.normal((batch_size//self.critic, self.latent_dim))
         gloss = self.generator_step(z)
 
         return dict(gloss=gloss, dloss=dloss / self.critic)
+    
+    def call(self, inputs):
+        return self.d(self.g(inputs))
 
-    def call(self, x):
-        return self.d(self.g(x))
+tf.config.set_visible_devices([], 'GPU')
+g = Generator(10)
+d = Discriminator()
+wgan = WGAN(d, g, 5)
+wgan.compile(
+    tf.keras.optimizers.RMSprop(.00005),
+    tf.keras.optimizers.RMSprop(.00005),
+)
+wgan(tf.random.normal((1,10)))
 
+ckpt_dir = os.path.join(os.curdir, "runs64" )
+latest = tf.train.latest_checkpoint(ckpt_dir)
 
-NAME = "EXPERIMENTAL"
-BATCH_SIZE = 512
-LATENT_DIM = 10
-OUT_SIZE = 64
-EPOCHS = 2000
-CRITIC = 16
+wgan.load_weights(latest)
 
-latest = tf.train.latest_checkpoint(os.path.join(os.curdir, "runs{OUT_SIZE}"))
-latest = os.path.join(os.curdir, f"runs{OUT_SIZE}", "KEYBOARDINTERRUPT.h5")
-
-#strategy = tf.distribute.get_strategy()
-strategy = tf.distribute.MirroredStrategy()
-
-#strategy = tf.distribute.OneDeviceStrategy(tf.device("GPU"))
-
-with strategy.scope():
-    d = Discriminator()
-    g = Generator(LATENT_DIM)
-    wgan = WGAN(d, g, CRITIC)
-    wgan.compile(
-        tf.keras.optimizers.RMSprop(.0002),
-        tf.keras.optimizers.RMSprop(.0002),
-    )
-    if latest:
-        print("\nRELOAD MODEL FROM :: ", latest, "\n")
-        wgan(tf.random.normal((1, LATENT_DIM)))
-        wgan.load_weights(latest)
-
-
-ds = load_raw_data("./datasets/bitmoji_bg_128/", OUT_SIZE, prefix="*")
-
-ds = (ds
-      .cache()
-      .shuffle(140_000)
-      .batch(BATCH_SIZE*strategy.num_replicas_in_sync, drop_remainder=True)
-      .prefetch(-1)
-      )
-
-#ds = strategy.experimental_distribute_dataset(ds)
-
-try:
-    wgan.fit(
-        ds,
-        epochs=EPOCHS,
-        callbacks=[
-            tf.keras.callbacks.TensorBoard(f"./runs{OUT_SIZE}/{NAME}", histogram_freq=1),
-            SaveGrid(f"./runs{OUT_SIZE}/{NAME}", 1),
-            tf.keras.callbacks.ModelCheckpoint(f"./runs{OUT_SIZE}/{NAME}")
-        ]
-    )
-except KeyboardInterrupt:
-    wgan.save_weights(f"./runs{OUT_SIZE}/KEYBOARDINTERRUPT.h5")
-
+#gan.summary()

@@ -25,11 +25,10 @@ class ClipConstraint(tf.keras.constraints.Constraint):
         return {'clip_value': self.clip_value}
 
 class SaveGrid(tf.keras.callbacks.Callback):
-    def __init__(self, root, every_epochs, ncols=5, nrows=5):
+    def __init__(self, root, every_epochs, num_images=64):
         super(SaveGrid, self).__init__()
         self.every_epochs = every_epochs
-        self.ncols = ncols
-        self.nrows = nrows
+        self.num_images = num_images
         self.writer = tf.summary.create_file_writer(root)
         self.log_dir = os.path.join(root, "images")
         os.makedirs(self.log_dir, exist_ok=True)
@@ -39,10 +38,10 @@ class SaveGrid(tf.keras.callbacks.Callback):
         if epoch % self.every_epochs != 0:
             return
         if self.z is None:
-            self.z = tf.random.normal((self.ncols*self.nrows, self.model.latent_dim))
+            self.z = tf.random.normal((self.num_images, self.model.latent_dim))
 
         generated_images = .5 * (self.model.g(self.z) + 1)
-        figure = utils.samples_grid(generated_images, nrows=self.nrows, ncols=self.ncols)
+        figure = utils.samples_grid(generated_images)
         figure.savefig(self.log_dir + f"/samples_grid_{epoch}.png")
         image = utils.plot_to_image(figure)
         with self.writer.as_default():
@@ -65,7 +64,7 @@ class Generator(tf.keras.models.Model):
             layers.LeakyReLU(alpha),
             layers.Reshape((w, h, f)),
 
-            layers.Conv2DTranspose(f, (5, 5), strides=(2, 2), padding='same', use_bias=False),
+            layers.Conv2DTranspose(256, (5, 5), strides=(2, 2), padding='same', use_bias=False),
             layers.BatchNormalization(),
             layers.LeakyReLU(alpha),
 
@@ -82,10 +81,6 @@ class Generator(tf.keras.models.Model):
             layers.LeakyReLU(alpha),
 
             layers.Conv2DTranspose(16, (4, 4), strides=(2, 2), padding='same', use_bias=False),
-            layers.BatchNormalization(),
-            layers.LeakyReLU(alpha),
-
-            layers.Conv2D(3, (4, 4), 2, padding='same', use_bias=False),
             layers.BatchNormalization(),
             layers.LeakyReLU(alpha),
 
@@ -187,26 +182,25 @@ class WGAN(tf.keras.Model):
         batch_size = real_images.shape[0]
 
         dloss = tf.constant(.0)
-        #for _ in range(self.critic):
-        z = tf.random.normal((batch_size, self.latent_dim))
-        epsilon = tf.random.normal((batch_size, 1, 1, 1))
-        _dloss = self.discriminator_step(real_images, z, epsilon, 2.)
-        dloss += _dloss
+        for _ in range(self.critic):
+            z = tf.random.normal((batch_size, self.latent_dim))
+            epsilon = tf.random.normal((batch_size, 1, 1, 1))
+            _dloss = self.discriminator_step(real_images, z, epsilon, 10.)
+            dloss += _dloss
 
-        z = tf.random.normal((batch_size//self.critic, self.latent_dim))
         gloss = self.generator_step(z)
 
         return dict(gloss=gloss, dloss=dloss / self.critic)
 
 
-NAME = "EXPERIMENTAL"
-BATCH_SIZE = 512
-LATENT_DIM = 15
-OUT_SIZE = 64
+NAME = "EXPERIMENTAL_128"
+BATCH_SIZE = 64
+LATENT_DIM = 10
+OUT_SIZE = 128
 EPOCHS = 2000
-CRITIC = 8
+CRITIC = 5
 
-latest = tf.train.latest_checkpoint(os.path.join(os.curdir, "runs32"))
+latest = tf.train.latest_checkpoint(os.path.join(os.curdir, "runs128"))
 print(latest)
 
 #strategy = tf.distribute.get_strategy()
@@ -219,8 +213,8 @@ with strategy.scope():
     g = Generator(LATENT_DIM)
     wgan = WGAN(d, g, CRITIC)
     wgan.compile(
-        tf.keras.optimizers.RMSprop(.0001),
-        tf.keras.optimizers.RMSprop(.0001),
+        tf.keras.optimizers.RMSprop(.00005),
+        tf.keras.optimizers.RMSprop(.00005),
     )
     if latest:
         wgan.load_weights(latest)
@@ -230,7 +224,7 @@ ds = load_raw_data("./datasets/bitmoji_bg_128/", OUT_SIZE, prefix="*")
 
 ds = (ds
       .cache()
-      #.shuffle(140_000)
+      #.shuffle(len(ds))
       .batch(BATCH_SIZE*strategy.num_replicas_in_sync, drop_remainder=True)
       .prefetch(-1)
       )
@@ -248,5 +242,5 @@ try:
         ]
     )
 except KeyboardInterrupt:
-    wgan.save_weights(f"./runs{OUT_SIZE}/KEYBOARDINTERRUPT.h5")
+    wgan.save_weights(f"./runs{OUT_SIZE}/KEYBOARDINTERRUPT128.h5")
 
