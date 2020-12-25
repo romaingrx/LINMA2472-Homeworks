@@ -1,3 +1,9 @@
+img[src$="center"] {
+  display:block;
+  margin: 0 auto;
+}
+
+
 WGAN-GP
 ===
 
@@ -10,13 +16,21 @@ We based our GAN on a Wasserstein Generative Adversial Network with gradient pen
 
 ### Generator
 
-![Generator architecture](./ressources/imgs/generator.jpg)
+<p align="center">
+  <img src=./ressources/imgs/generator.jpg />
+</p>
 
 ### Discriminator
 
-![Discriminator architecture](./ressources/imgs/discriminator.jpg)
+
+<p align="center">
+  <img src=./ressources/imgs/discriminator.jpg />
+</p>
 
 Preview of the results
 ---
 
-![0-669 epochs generaated images](./ressources/gif/0-669.gif)
+
+<p align="center">
+  <img src=./ressources/gif/0-669.gif />
+</p>
