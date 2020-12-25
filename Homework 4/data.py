@@ -1,16 +1,8 @@
 import os
-from tqdm import tqdm
-from tqdm.contrib.concurrent import process_map
-from functools import partial
-from multiprocessing import Pool
-
-import cv2
-import imageio
-import numpy as np
 
 import tensorflow as tf
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.data import Dataset
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 def load_data(root, batch_size, img_size, augmentation=False, cache=False):
     if cache and augmentation:
@@ -46,19 +38,6 @@ def load_data(root, batch_size, img_size, augmentation=False, cache=False):
 
     return dataset
 
-
-def _load_raw_data(root, img_size, prefix):
-    def _load_img(path):
-        img = tf.io.read_file(path)
-        img = tf.image.decode_png(img, channels=3)
-        img = tf.image.resize(img, img_size)
-        img = (img - 127.5) / 127.5 # tanh
-        return img
-
-    pattern = os.path.join(root, prefix)
-    ds = Dataset.list_files(pattern)
-    ds = ds.map(_load_img, num_parallel_calls=-1)
-    return ds
 
 def load_raw_data(root, img_size, prefix):
     img_size = img_size if isinstance(img_size, tuple) else (img_size, img_size)

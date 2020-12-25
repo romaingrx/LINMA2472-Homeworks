@@ -6,7 +6,6 @@ import tensorflow as tf
 
 import matplotlib
 import matplotlib.pyplot as plt
-matplotlib.use('Agg')
 
 
 class AttrDict(dict):
@@ -35,6 +34,7 @@ def generator_loss(loss_object, fake_output, global_batch_size=None):
 
 
 def save_imgs(epoch, generator, noise, root="images", name="bitmoji", nrows=5, ncols=5):
+    matplotlib.use('Agg')
     imgs = generator(noise, training=False)
 
     fig = plt.figure(figsize=(10, 10))
