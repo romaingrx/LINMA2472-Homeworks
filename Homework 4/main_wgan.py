@@ -212,10 +212,10 @@ CRITIC = 16
 latest = tf.train.latest_checkpoint(os.path.join(os.curdir, "runs{OUT_SIZE}"))
 latest = os.path.join(os.curdir, f"runs{OUT_SIZE}", "KEYBOARDINTERRUPT.h5")
 
-#strategy = tf.distribute.get_strategy()
-strategy = tf.distribute.MirroredStrategy()
-
-#strategy = tf.distribute.OneDeviceStrategy(tf.device("GPU"))
+if tf.config.list_physical_devices("GPU"):
+    strategy = tf.distribute.MirroredStrategy()
+else:
+    strategy = tf.distribute.get_strategy()
 
 with strategy.scope():
     d = Discriminator()
@@ -231,27 +231,27 @@ with strategy.scope():
         wgan.load_weights(latest)
 
 
-ds = load_raw_data("./datasets/bitmoji_bg_128/", OUT_SIZE, prefix="*")
+if __name__ == '__main__':
+    ds = load_raw_data("./datasets/bitmoji_bg_128/", OUT_SIZE, prefix="*")
 
-ds = (ds
-      .cache()
-      .shuffle(140_000)
-      .batch(BATCH_SIZE*strategy.num_replicas_in_sync, drop_remainder=True)
-      .prefetch(-1)
-      )
+    ds = (ds
+          .cache()
+          .shuffle(140_000)
+          .batch(BATCH_SIZE*strategy.num_replicas_in_sync, drop_remainder=True)
+          .prefetch(-1)
+          )
 
-#ds = strategy.experimental_distribute_dataset(ds)
+    #ds = strategy.experimental_distribute_dataset(ds)
 
-try:
-    wgan.fit(
-        ds,
-        epochs=EPOCHS,
-        callbacks=[
-            tf.keras.callbacks.TensorBoard(f"./runs{OUT_SIZE}/{NAME}", histogram_freq=1),
-            SaveGrid(f"./runs{OUT_SIZE}/{NAME}", 1),
-            tf.keras.callbacks.ModelCheckpoint(f"./runs{OUT_SIZE}/{NAME}")
-        ]
-    )
-except KeyboardInterrupt:
-    wgan.save_weights(f"./runs{OUT_SIZE}/KEYBOARDINTERRUPT.h5")
-
+    try:
+        wgan.fit(
+            ds,
+            epochs=EPOCHS,
+            callbacks=[
+                tf.keras.callbacks.TensorBoard(f"./runs{OUT_SIZE}/{NAME}", histogram_freq=1),
+                SaveGrid(f"./runs{OUT_SIZE}/{NAME}", 1),
+                tf.keras.callbacks.ModelCheckpoint(f"./runs{OUT_SIZE}/{NAME}")
+            ]
+        )
+    except KeyboardInterrupt:
+        wgan.save_weights(f"./runs{OUT_SIZE}/KEYBOARDINTERRUPT.h5")
