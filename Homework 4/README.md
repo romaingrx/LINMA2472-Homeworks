@@ -24,7 +24,14 @@ We based our GAN on a Wasserstein Generative Adversial Network with gradient pen
 Preview of the results
 ---
 
+### First epochs
 
 <p align="center">
   <img src=./ressources/gif/0-669.gif />
+</p>
+
+### Last epochs
+
+<p align="center">
+  <img src=./ressources/gif/last.gif />
 </p>
